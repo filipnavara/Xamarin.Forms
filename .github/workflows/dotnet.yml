@@ -1,0 +1,57 @@
+name: Build and publish
+
+on:
+  push:
+    branches: [ net6 ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+    - name: Install iOS workload
+      run: dotnet workload install ios -s https://api.nuget.org/v3/index.json
+    - name: Install older NuGet.exe
+      run: |
+        curl https://dist.nuget.org/win-x86-commandline/v5.8.1/nuget.exe --output nuget.exe
+        chmod +x nuget.exe
+    - name: Build
+      run: msbuild Xamarin.Forms.sln /p:Configuration=Release /p:BUILDVERSION="${GITHUB_RUN_NUMBER}" /p:BUILD_BUILDID="${GITHUB_RUN_NUMBER}" /restore
+    - name: Build (.NET 6 / iOS)
+      run: dotnet build Xamarin.Forms.Platform.iOS /p:Configuration=Release /p:TargetFramework=net6.0-ios /p:BUILDVERSION="${GITHUB_RUN_NUMBER}" /p:BUILD_BUILDID="${GITHUB_RUN_NUMBER}" /p:_SdkIgnoreMSBuildCoreWarning=true /p:_ExtrasSkipTargetsCheck=true
+    - name: Pack
+      run: |
+        mono nuget.exe pack .nuspec/Xamarin.Forms.nuspec -Properties "Version=$(< .XamarinFormsVersionFile.txt);Configuration=Release"
+    - uses: actions/upload-artifact@master
+      with:
+        name: build-artifacts
+        path: Xamarin.Forms.*.nupkg
+
+  publish:
+    permissions:
+      packages: write
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.0.x
+        include-prerelease: true
+    - uses: actions/download-artifact@master
+      with:
+        name: build-artifacts
+        path: build-artifacts
+    - name: Publish
+      if: ${{ github.event_name == 'push' }}
+      env:
+        token: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        dotnet nuget add source https://nuget.pkg.github.com/filipnavara/index.json -n github
+        find build-artifacts -name '*.nupkg' | xargs -i dotnet nuget push {} -s github --api-key ${{ secrets.GITHUB_TOKEN }}
