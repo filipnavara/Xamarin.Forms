@@ -110,9 +110,13 @@ namespace Xamarin.Forms.Platform.MacOS
 
 		static CGRect GetCharacterBounds(NSRange characterRange, NSLayoutManager layoutManager, NSTextContainer textContainer)
 		{
+#if NET
+			var glyphRange = layoutManager.GetCharacterRange(characterRange);
+			return layoutManager.GetBoundingRect(glyphRange, textContainer);
+#else
+#if __MOBILE__
 			var glyphRange = new NSRange();
 
-#if __MOBILE__
 #pragma warning disable CS0618 // Type or member is obsolete
 			layoutManager.CharacterRangeForGlyphRange(characterRange, ref glyphRange);
 #pragma warning restore CS0618 // Type or member is obsolete
@@ -122,6 +126,7 @@ namespace Xamarin.Forms.Platform.MacOS
 #pragma warning restore CS0618 // Type or member is obsolete
 #endif
 			return layoutManager.BoundingRectForGlyphRange(glyphRange, textContainer);
+#endif
 		}
 
 		static double FindDefaultLineHeight(this NativeLabel control, int start, int length)

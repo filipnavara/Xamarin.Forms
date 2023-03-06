@@ -387,77 +387,75 @@ namespace Xamarin.Forms
 					// Ignore obsolete Xamarin.iOS colors for now
 					// until this Xamarin.iOS version has been adopted more widely
 					// This is just a change in Xamarin.iOS not UIKit
-#pragma warning disable CS0618 // Type or member is obsolete
 					case NamedPlatformColor.Label:
-						resultColor = UIColor.LabelColor;
+						resultColor = UIColor.Label;
 						break;
 					case NamedPlatformColor.Link:
-						resultColor = UIColor.LinkColor;
+						resultColor = UIColor.Link;
 						break;
 					case NamedPlatformColor.OpaqueSeparator:
-						resultColor = UIColor.OpaqueSeparatorColor;
+						resultColor = UIColor.OpaqueSeparator;
 						break;
 					case NamedPlatformColor.PlaceholderText:
-						resultColor = UIColor.PlaceholderTextColor;
+						resultColor = UIColor.PlaceholderText;
 						break;
 					case NamedPlatformColor.QuaternaryLabel:
-						resultColor = UIColor.QuaternaryLabelColor;
+						resultColor = UIColor.QuaternaryLabel;
 						break;
 					case NamedPlatformColor.SecondaryLabel:
-						resultColor = UIColor.SecondaryLabelColor;
+						resultColor = UIColor.SecondaryLabel;
 						break;
 					case NamedPlatformColor.Separator:
-						resultColor = UIColor.SeparatorColor;
+						resultColor = UIColor.Separator;
 						break;
 					case NamedPlatformColor.SystemBlue:
-						resultColor = UIColor.SystemBlueColor;
+						resultColor = UIColor.SystemBlue;
 						break;
 					case NamedPlatformColor.SystemGray:
-						resultColor = UIColor.SystemGrayColor;
+						resultColor = UIColor.SystemGray;
 						break;
 					case NamedPlatformColor.SystemGray2:
-						resultColor = UIColor.SystemGray2Color;
+						resultColor = UIColor.SystemGray2;
 						break;
 					case NamedPlatformColor.SystemGray3:
-						resultColor = UIColor.SystemGray3Color;
+						resultColor = UIColor.SystemGray3;
 						break;
 					case NamedPlatformColor.SystemGray4:
-						resultColor = UIColor.SystemGray4Color;
+						resultColor = UIColor.SystemGray4;
 						break;
 					case NamedPlatformColor.SystemGray5:
-						resultColor = UIColor.SystemGray5Color;
+						resultColor = UIColor.SystemGray5;
 						break;
 					case NamedPlatformColor.SystemGray6:
-						resultColor = UIColor.SystemGray6Color;
+						resultColor = UIColor.SystemGray6;
 						break;
 					case NamedPlatformColor.SystemGreen:
-						resultColor = UIColor.SystemGreenColor;
+						resultColor = UIColor.SystemGreen;
 						break;
 					case NamedPlatformColor.SystemIndigo:
-						resultColor = UIColor.SystemIndigoColor;
+						resultColor = UIColor.SystemIndigo;
 						break;
 					case NamedPlatformColor.SystemOrange:
-						resultColor = UIColor.SystemOrangeColor;
+						resultColor = UIColor.SystemOrange;
 						break;
 					case NamedPlatformColor.SystemPink:
-						resultColor = UIColor.SystemPinkColor;
+						resultColor = UIColor.SystemPink;
 						break;
 					case NamedPlatformColor.SystemPurple:
-						resultColor = UIColor.SystemPurpleColor;
+						resultColor = UIColor.SystemPurple;
 						break;
 					case NamedPlatformColor.SystemRed:
-						resultColor = UIColor.SystemRedColor;
+						resultColor = UIColor.SystemRed;
 						break;
 					case NamedPlatformColor.SystemTeal:
-						resultColor = UIColor.SystemTealColor;
+						resultColor = UIColor.SystemTeal;
 						break;
 					case NamedPlatformColor.SystemYellow:
-						resultColor = UIColor.SystemYellowColor;
+						resultColor = UIColor.SystemYellow;
 						break;
 					case NamedPlatformColor.TertiaryLabel:
-						resultColor = UIColor.TertiaryLabelColor;
+						resultColor = UIColor.TertiaryLabel;
 						break;
-#pragma warning restore CS0618 // Type or member is obsolete
 					default:
 						resultColor = UIColor.FromName(name);
 						break;

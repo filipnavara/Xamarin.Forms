@@ -16,7 +16,6 @@ namespace Xamarin.Forms.Platform.MacOS
 	// Ignore obsolete Xamarin.iOS colors for now
 	// until this Xamarin.iOS version has been adopted more widely
 	// This is just a change in Xamarin.iOS not UIKit
-#pragma warning disable CS0618 // Type or member is obsolete
 	public static class ColorExtensions
 	{
 #if __MOBILE__
@@ -28,7 +27,7 @@ namespace Xamarin.Forms.Platform.MacOS
 			get
 			{
 				if (Forms.IsiOS13OrNewer)
-					return UIColor.LabelColor;
+					return UIColor.Label;
 
 				return UIColor.Black;
 			}
@@ -39,7 +38,7 @@ namespace Xamarin.Forms.Platform.MacOS
 			get
 			{
 				if (Forms.IsiOS13OrNewer)
-					return UIColor.PlaceholderTextColor;
+					return UIColor.PlaceholderText;
 
 				return SeventyPercentGrey;
 			}
@@ -50,7 +49,7 @@ namespace Xamarin.Forms.Platform.MacOS
 			get
 			{
 				if (Forms.IsiOS13OrNewer)
-					return UIColor.SecondaryLabelColor;
+					return UIColor.SecondaryLabel;
 
 				return new Color(.32, .4, .57).ToUIColor();
 			}
@@ -61,7 +60,7 @@ namespace Xamarin.Forms.Platform.MacOS
 			get
 			{
 				if (Forms.IsiOS13OrNewer)
-					return UIColor.SystemBackgroundColor;
+					return UIColor.SystemBackground;
 
 				return UIColor.White;
 			}
@@ -72,7 +71,7 @@ namespace Xamarin.Forms.Platform.MacOS
 			get
 			{
 				if (Forms.IsiOS13OrNewer)
-					return UIColor.SeparatorColor;
+					return UIColor.Separator;
 
 				return UIColor.Gray;
 			}
@@ -83,7 +82,7 @@ namespace Xamarin.Forms.Platform.MacOS
 			get
 			{
 				if (Forms.IsiOS13OrNewer)
-					return UIColor.OpaqueSeparatorColor;
+					return UIColor.OpaqueSeparator;
 
 				return UIColor.Black;
 			}
@@ -94,7 +93,7 @@ namespace Xamarin.Forms.Platform.MacOS
 			get
 			{
 				if (Forms.IsiOS13OrNewer)
-					return UIColor.SystemGroupedBackgroundColor;
+					return UIColor.SystemGroupedBackground;
 
 				return new UIColor(247f / 255f, 247f / 255f, 247f / 255f, 1);
 			}
@@ -105,7 +104,7 @@ namespace Xamarin.Forms.Platform.MacOS
 			get
 			{
 				if (Forms.IsiOS13OrNewer)
-					return UIColor.SystemBlueColor;
+					return UIColor.SystemBlue;
 
 				return Color.FromRgba(50, 79, 133, 255).ToUIColor();
 			}
@@ -116,7 +115,7 @@ namespace Xamarin.Forms.Platform.MacOS
 			get
 			{
 				if (Forms.IsiOS13OrNewer)
-					return UIColor.SystemRedColor;
+					return UIColor.SystemRed;
 
 				return UIColor.FromRGBA(255, 0, 0, 255);
 			}
@@ -127,7 +126,7 @@ namespace Xamarin.Forms.Platform.MacOS
 			get
 			{
 				if (Forms.IsiOS13OrNewer)
-					return UIColor.SystemGrayColor;
+					return UIColor.SystemGray;
 
 				return UIColor.Gray;
 			}
@@ -138,7 +137,7 @@ namespace Xamarin.Forms.Platform.MacOS
 			get
 			{
 				if (Forms.IsiOS13OrNewer)
-					return UIColor.SystemGray2Color;
+					return UIColor.SystemGray2;
 				return UIColor.LightGray;
 
 			}
