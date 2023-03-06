@@ -114,9 +114,9 @@ namespace Xamarin.Forms.Platform.MacOS
 			var glyphRange = layoutManager.GetCharacterRange(characterRange);
 			return layoutManager.GetBoundingRect(glyphRange, textContainer);
 #else
-#if __MOBILE__
 			var glyphRange = new NSRange();
 
+#if __MOBILE__
 #pragma warning disable CS0618 // Type or member is obsolete
 			layoutManager.CharacterRangeForGlyphRange(characterRange, ref glyphRange);
 #pragma warning restore CS0618 // Type or member is obsolete

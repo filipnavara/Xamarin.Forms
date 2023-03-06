@@ -123,7 +123,7 @@ namespace Xamarin.Forms.Platform.MacOS
 
 		public override void ViewWillAppear()
 		{
-			Init();
+			InitRenderer();
 			base.ViewWillAppear();
 		}
 
@@ -184,7 +184,7 @@ namespace Xamarin.Forms.Platform.MacOS
 				NativeView.AccessibilityIdentifier = id;
 		}
 
-		void Init()
+		void InitRenderer()
 		{
 			if (_init)
 				return;
