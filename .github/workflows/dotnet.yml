@@ -26,7 +26,7 @@ jobs:
     - name: Build
       run: msbuild Xamarin.Forms.sln /p:Configuration=Release /p:BUILDVERSION="${GITHUB_RUN_NUMBER}" /p:BUILD_BUILDID="${GITHUB_RUN_NUMBER}" /restore
     - name: Build (.NET 6 / iOS)
-      run: dotnet build Xamarin.Forms.Platform.iOS /p:Configuration=Release /p:TargetFramework=net6.0-ios /p:BUILDVERSION="${GITHUB_RUN_NUMBER}" /p:BUILD_BUILDID="${GITHUB_RUN_NUMBER}" /p:_SdkIgnoreMSBuildCoreWarning=true /p:_ExtrasSkipTargetsCheck=true
+      run: dotnet build Xamarin.Forms.Platform.iOS /p:Configuration=Release /p:Net6Build=true /p:BUILDVERSION="${GITHUB_RUN_NUMBER}" /p:BUILD_BUILDID="${GITHUB_RUN_NUMBER}" /p:_SdkIgnoreMSBuildCoreWarning=true /p:_ExtrasSkipTargetsCheck=true /restore
     - name: Pack
       run: |
         mono nuget.exe pack .nuspec/Xamarin.Forms.nuspec -Properties "Version=$(< .XamarinFormsVersionFile.txt);Configuration=Release"
@@ -40,6 +40,7 @@ jobs:
       packages: write
     needs: build
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/net6'
     steps:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
