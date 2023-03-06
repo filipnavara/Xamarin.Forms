@@ -59,7 +59,7 @@ namespace Xamarin.Forms.Platform.MacOS
 			VisualElement oldElement = Element;
 			Element = element;
 
-			Init();
+			InitRenderer();
 
 			RaiseElementChanged(new VisualElementChangedEventArgs(oldElement, element));
 		}
@@ -146,7 +146,7 @@ namespace Xamarin.Forms.Platform.MacOS
 
 		CarouselPage Carousel => Element as CarouselPage;
 
-		void Init()
+		void InitRenderer()
 		{
 			Delegate = new PageControllerDelegate();
 
