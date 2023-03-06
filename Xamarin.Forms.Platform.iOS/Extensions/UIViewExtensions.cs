@@ -6,6 +6,7 @@ using static System.String;
 using Xamarin.Forms.Internals;
 using SizeF = CoreGraphics.CGSize;
 #if __MOBILE__
+using Foundation;
 using UIKit;
 namespace Xamarin.Forms.Platform.iOS
 #else
@@ -134,7 +135,7 @@ namespace Xamarin.Forms.Platform.MacOS
 					}
 				}
 #if __MOBILE__
-				catch (Foundation.MonoTouchException ex)
+				catch (MonoTouchException ex)
 				{
 					nativePropertyListener = null;
 					if (ex.Name == "NSUnknownKeyException")
