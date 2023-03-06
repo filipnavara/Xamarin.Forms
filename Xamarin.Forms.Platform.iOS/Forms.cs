@@ -476,7 +476,7 @@ namespace Xamarin.Forms
 							break;
 					case NamedPlatformColor.ControlAccent:
 						if (IsMojaveOrNewer)
-							resultColor = NSColor.ControlAccentColor;
+							resultColor = NSColor.ControlAccent;
 						break;
 					case NamedPlatformColor.ControlBackgroundColor:
 						resultColor = NSColor.ControlBackground;
@@ -492,7 +492,7 @@ namespace Xamarin.Forms
 						break;
 					case NamedPlatformColor.FindHighlightColor:
 						if (IsHighSierraOrNewer)
-							resultColor = NSColor.FindHighlightColor;
+							resultColor = NSColor.FindHighlight;
 						break;
 					case NamedPlatformColor.GridColor:
 						resultColor = NSColor.Grid;
@@ -507,22 +507,22 @@ namespace Xamarin.Forms
 						resultColor = NSColor.KeyboardFocusIndicator;
 						break;
 					case NamedPlatformColor.LabelColor:
-						resultColor = NSColor.LabelColor;
+						resultColor = NSColor.Label;
 						break;
 					case NamedPlatformColor.LinkColor:
-						resultColor = NSColor.LinkColor;
+						resultColor = NSColor.Link;
 						break;
 					case NamedPlatformColor.PlaceholderTextColor:
-						resultColor = NSColor.PlaceholderTextColor;
+						resultColor = NSColor.PlaceholderText;
 						break;
 					case NamedPlatformColor.QuaternaryLabelColor:
-						resultColor = NSColor.QuaternaryLabelColor;
+						resultColor = NSColor.QuaternaryLabel;
 						break;
 					case NamedPlatformColor.SecondaryLabelColor:
-						resultColor = NSColor.SecondaryLabelColor;
+						resultColor = NSColor.SecondaryLabel;
 						break;
 					case NamedPlatformColor.SelectedContentBackgroundColor:
-						resultColor = NSColor.SelectedContentBackgroundColor;
+						resultColor = NSColor.SelectedContentBackground;
 						break;
 					case NamedPlatformColor.SelectedControlColor:
 						resultColor = NSColor.SelectedControl;
@@ -540,13 +540,13 @@ namespace Xamarin.Forms
 						resultColor = NSColor.SelectedText;
 						break;
 					case NamedPlatformColor.SeparatorColor:
-						resultColor = NSColor.SeparatorColor;
+						resultColor = NSColor.Separator;
 						break;
 					case NamedPlatformColor.ShadowColor:
 						resultColor = NSColor.Shadow;
 						break;
 					case NamedPlatformColor.TertiaryLabelColor:
-						resultColor = NSColor.TertiaryLabelColor;
+						resultColor = NSColor.TertiaryLabel;
 						break;
 					case NamedPlatformColor.TextBackgroundColor:
 						resultColor = NSColor.TextBackground;
@@ -555,19 +555,19 @@ namespace Xamarin.Forms
 						resultColor = NSColor.Text;
 						break;
 					case NamedPlatformColor.UnderPageBackgroundColor:
-						resultColor = NSColor.UnderPageBackgroundColor;
+						resultColor = NSColor.UnderPageBackground;
 						break;
 					case NamedPlatformColor.UnemphasizedSelectedContentBackgroundColor:
 						if (IsMojaveOrNewer)
-							resultColor = NSColor.UnemphasizedSelectedContentBackgroundColor;
+							resultColor = NSColor.UnemphasizedSelectedContentBackground;
 						break;
 					case NamedPlatformColor.UnemphasizedSelectedTextBackgroundColor:
 						if (IsMojaveOrNewer)
-							resultColor = NSColor.UnemphasizedSelectedTextBackgroundColor;
+							resultColor = NSColor.UnemphasizedSelectedTextBackground;
 						break;
 					case NamedPlatformColor.UnemphasizedSelectedTextColor:
 						if (IsMojaveOrNewer)
-							resultColor = NSColor.UnemphasizedSelectedTextColor;
+							resultColor = NSColor.UnemphasizedSelectedText;
 						break;
 					case NamedPlatformColor.WindowBackgroundColor:
 						resultColor = NSColor.WindowBackground;
@@ -576,56 +576,56 @@ namespace Xamarin.Forms
 						resultColor = NSColor.WindowFrameText;
 						break;
 					case NamedPlatformColor.Label:
-						resultColor = NSColor.LabelColor;
+						resultColor = NSColor.Label;
 						break;
 					case NamedPlatformColor.Link:
-						resultColor = NSColor.LinkColor;
+						resultColor = NSColor.Link;
 						break;
 					case NamedPlatformColor.PlaceholderText:
-						resultColor = NSColor.PlaceholderTextColor;
+						resultColor = NSColor.PlaceholderText;
 						break;
 					case NamedPlatformColor.QuaternaryLabel:
-						resultColor = NSColor.QuaternaryLabelColor;
+						resultColor = NSColor.QuaternaryLabel;
 						break;
 					case NamedPlatformColor.SecondaryLabel:
-						resultColor = NSColor.SecondaryLabelColor;
+						resultColor = NSColor.SecondaryLabel;
 						break;
 					case NamedPlatformColor.Separator:
 						if (IsMojaveOrNewer)
-							resultColor = NSColor.SeparatorColor;
+							resultColor = NSColor.Separator;
 						break;
 					case NamedPlatformColor.SystemBlue:
-						resultColor = NSColor.SystemBlueColor;
+						resultColor = NSColor.SystemBlue;
 						break;
 					case NamedPlatformColor.SystemGray:
-						resultColor = NSColor.SystemGrayColor;
+						resultColor = NSColor.SystemGray;
 						break;
 					case NamedPlatformColor.SystemGreen:
-						resultColor = NSColor.SystemGreenColor;
+						resultColor = NSColor.SystemGreen;
 						break;
 					case NamedPlatformColor.SystemIndigo:
-						resultColor = NSColor.SystemIndigoColor;
+						resultColor = NSColor.SystemIndigo;
 						break;
 					case NamedPlatformColor.SystemOrange:
-						resultColor = NSColor.SystemOrangeColor;
+						resultColor = NSColor.SystemOrange;
 						break;
 					case NamedPlatformColor.SystemPink:
-						resultColor = NSColor.SystemPinkColor;
+						resultColor = NSColor.SystemPink;
 						break;
 					case NamedPlatformColor.SystemPurple:
-						resultColor = NSColor.SystemPurpleColor;
+						resultColor = NSColor.SystemPurple;
 						break;
 					case NamedPlatformColor.SystemRed:
-						resultColor = NSColor.SystemRedColor;
+						resultColor = NSColor.SystemRed;
 						break;
 					case NamedPlatformColor.SystemTeal:
-						resultColor = NSColor.SystemTealColor;
+						resultColor = NSColor.SystemTeal;
 						break;
 					case NamedPlatformColor.SystemYellow:
-						resultColor = NSColor.SystemYellowColor;
+						resultColor = NSColor.SystemYellow;
 						break;
 					case NamedPlatformColor.TertiaryLabel:
-						resultColor = NSColor.TertiaryLabelColor;
+						resultColor = NSColor.TertiaryLabel;
 						break;
 					default:
 						resultColor = NSColor.FromName(name);
