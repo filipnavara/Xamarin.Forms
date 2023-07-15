@@ -493,7 +493,7 @@ namespace Xamarin.Forms.Platform.MacOS
 			var htmlData = new NSMutableData();
 			htmlData.SetData(text);
 
-			Control.AttributedStringValue = new NSAttributedString(htmlData, attr, out NSError _);
+			Control.AttributedStringValue = new NSAttributedString(htmlData, attr, out NSDictionary _);
 #endif
 			_perfectSizeValid = false;
 
