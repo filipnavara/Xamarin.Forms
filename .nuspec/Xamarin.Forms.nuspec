@@ -185,8 +185,8 @@
     <file src="..\Xamarin.Forms.Xaml.Design\bin\$Configuration$\Xamarin.Forms.Xaml.Design.dll" target="lib\MonoAndroid13.0\Design" />
     <file src="..\Xamarin.Forms.Core.Design\bin\$Configuration$\Xamarin.Forms.Core.Design.dll" target="lib\Xamarin.iOS10\Design" />
     <file src="..\Xamarin.Forms.Xaml.Design\bin\$Configuration$\Xamarin.Forms.Xaml.Design.dll" target="lib\Xamarin.iOS10\Design" />
-    <file src="..\Xamarin.Forms.Core.Design\bin\$Configuration$\Xamarin.Forms.Core.Design.dll" target="lib\net6.0-ios\Design" />
-    <file src="..\Xamarin.Forms.Xaml.Design\bin\$Configuration$\Xamarin.Forms.Xaml.Design.dll" target="lib\net6.0-ios\Design" />
+    <file src="..\Xamarin.Forms.Core.Design\bin\$Configuration$\Xamarin.Forms.Core.Design.dll" target="lib\net7.0-ios\Design" />
+    <file src="..\Xamarin.Forms.Xaml.Design\bin\$Configuration$\Xamarin.Forms.Xaml.Design.dll" target="lib\net7.0-ios\Design" />
     <!--<file src="..\Xamarin.Forms.Core.Design\bin\$Configuration$\Xamarin.Forms.Core.Design.dll" target="lib\uap10.0.14393\Design" />
     <file src="..\Xamarin.Forms.Xaml.Design\bin\$Configuration$\Xamarin.Forms.Xaml.Design.dll" target="lib\uap10.0.14393\Design" />
     <file src="..\Xamarin.Forms.Core.Design\bin\$Configuration$\Xamarin.Forms.Core.Design.dll" target="lib\uap10.0.16299\Design" />
@@ -330,39 +330,39 @@
     <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\xamarin.ios10\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\Xamarin.iOS10\zh-Hant" />
     <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\xamarin.ios10\zh-HK\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\Xamarin.iOS10\zh-HK" />
 
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\ar\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\ar" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\ca\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\ca" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\cs\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\cs" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\da\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\da" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\de\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\de" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\el\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\el" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\es\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\es" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\fi\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\fi" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\fr\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\fr" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\he\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\he" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\hi\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\hi" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\hr\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\hr" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\hu\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\hu" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\id\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\id" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\it\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\it" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\ja\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\ja" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\ko\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\ko" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\ms\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\ms" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\nb\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\nb" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\nl\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\nl" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\pl\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\pl" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\pt-BR\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\pt-BR" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\pt\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\pt" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\ro\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\ro" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\ru\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\ru" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\sk\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\sk" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\sv\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\sv" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\th\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\th" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\tr\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\tr" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\uk\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\uk" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\vi\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\vi" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\zh-Hans\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\zh-Hans" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net6.0-ios\zh-Hant" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\ar\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\ar" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\ca\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\ca" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\cs\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\cs" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\da\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\da" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\de\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\de" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\el\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\el" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\es\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\es" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\fi\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\fi" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\fr\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\fr" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\he\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\he" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\hi\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\hi" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\hr\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\hr" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\hu\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\hu" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\id\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\id" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\it\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\it" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\ja\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\ja" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\ko\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\ko" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\ms\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\ms" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\nb\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\nb" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\nl\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\nl" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\pl\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\pl" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\pt-BR\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\pt-BR" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\pt\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\pt" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\ro\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\ro" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\ru\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\ru" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\sk\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\sk" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\sv\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\sv" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\th\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\th" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\tr\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\tr" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\uk\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\uk" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\vi\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\vi" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\zh-Hans\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\zh-Hans" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\zh-Hant\Xamarin.Forms.Platform.iOS.resources.dll" target="lib\net7.0-ios\zh-Hant" />
 
     <!--Tizen-->
     <!--<file src="..\Xamarin.Forms.Platform.Tizen\bin\$Configuration$\tizen40\Xamarin.Forms.Platform.Tizen.dll" target="lib\tizen40" />
