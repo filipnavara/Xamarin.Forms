@@ -3,8 +3,8 @@ name: Build and publish
 on:
   push:
     branches:
-    - 'net6'
-    - 'net6-*'
+    - 'net7'
+    - 'net7-*'
 
 jobs:
   build:
@@ -16,7 +16,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 7.0.x
     - name: Install iOS workload
       run: dotnet workload install ios -s https://api.nuget.org/v3/index.json
     - name: Install older NuGet.exe
@@ -25,8 +25,8 @@ jobs:
         chmod +x nuget.exe
     - name: Build
       run: msbuild Xamarin.Forms.sln /p:Configuration=Release /p:BUILDVERSION="${GITHUB_RUN_NUMBER}" /p:BUILD_BUILDID="${GITHUB_RUN_NUMBER}" /restore
-    - name: Build (.NET 6 / iOS)
-      run: dotnet build Xamarin.Forms.Platform.iOS /p:Configuration=Release /p:Net6Build=true /p:BUILDVERSION="${GITHUB_RUN_NUMBER}" /p:BUILD_BUILDID="${GITHUB_RUN_NUMBER}" /p:_SdkIgnoreMSBuildCoreWarning=true /p:_ExtrasSkipTargetsCheck=true /restore
+    - name: Build (.NET 7 / iOS)
+      run: dotnet build Xamarin.Forms.Platform.iOS /p:Configuration=Release /p:Net7Build=true /p:BUILDVERSION="${GITHUB_RUN_NUMBER}" /p:BUILD_BUILDID="${GITHUB_RUN_NUMBER}" /p:_SdkIgnoreMSBuildCoreWarning=true /p:_ExtrasSkipTargetsCheck=true /restore
     - name: Pack
       run: |
         mono nuget.exe pack .nuspec/Xamarin.Forms.nuspec -Properties "Version=$(< .XamarinFormsVersionFile.txt);Configuration=Release"
@@ -40,12 +40,12 @@ jobs:
       packages: write
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/net6'
+    if: github.ref == 'refs/heads/net7'
     steps:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 7.0.x
         include-prerelease: true
     - uses: actions/download-artifact@master
       with:

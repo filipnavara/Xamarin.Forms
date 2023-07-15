@@ -1,7 +1,7 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
   <PropertyGroup>
-    <TargetFramework Condition="'$(Net6Build)' == 'true'">net6.0-ios</TargetFramework>
-    <TargetFramework Condition="'$(Net6Build)' != 'true'">xamarin.ios10</TargetFramework>
+    <TargetFramework Condition="'$(Net7Build)' == 'true'">net7.0-ios</TargetFramework>
+    <TargetFramework Condition="'$(Net7Build)' != 'true'">xamarin.ios10</TargetFramework>
     <EnableDefaultItems>false</EnableDefaultItems>
   </PropertyGroup>
   <Import Condition="'$(EnvironmentBuildPropsImported)' != 'True'" Project="..\Environment.Build.props" />
@@ -9,11 +9,11 @@
     <Description>iOS Backend for Xamarin.Forms</Description>
     <AssemblyName>Xamarin.Forms.Platform.iOS</AssemblyName>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0-ios'">
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
     <SupportedOSPlatformVersion>14.2</SupportedOSPlatformVersion>
-    <WarningsNotAsErrors>BI1234;CA1416;CS8032</WarningsNotAsErrors>
+    <WarningsNotAsErrors>BI1234;CA1416;CA1422;CS8032</WarningsNotAsErrors>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-ios'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
     <Using Include="ObjCRuntime.ObjCException" Alias="MonoTouchException" />
     <Using Include="ObjCRuntime.NMath" Alias="NMath" />
   </ItemGroup>

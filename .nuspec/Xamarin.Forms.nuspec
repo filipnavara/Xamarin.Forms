@@ -61,7 +61,7 @@
         <reference file="Xamarin.Forms.Xaml.dll" />
         <reference file="Xamarin.Forms.Platform.iOS.dll" />
       </group>
-      <group targetFramework="net6.0-ios">
+      <group targetFramework="net7.0-ios">
         <reference file="Xamarin.Forms.Core.dll" />
         <reference file="Xamarin.Forms.Platform.dll" />
         <reference file="Xamarin.Forms.Xaml.dll" />
@@ -231,21 +231,21 @@
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.*mdb" target="lib\Xamarin.iOS10" />
     <file src="..\Stubs\Xamarin.Forms.Platform.iOS\bin\iPhone\$Configuration$\Xamarin.Forms.Platform.dll" target="lib\Xamarin.iOS10" />
 
-    <!--.NET 6 iOS-->
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\Xamarin.Forms.Platform.iOS.dll" target="lib\net6.0-ios" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\Xamarin.Forms.Platform.iOS.*pdb" target="lib\net6.0-ios" />
-    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net6.0-ios\Xamarin.Forms.Platform.iOS.*mdb" target="lib\net6.0-ios" />
-    <file src="..\Xamarin.Forms.Core\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Core.dll" target="lib\net6.0-ios" />
-    <file src="..\Xamarin.Forms.Core\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Core.*pdb" target="lib\net6.0-ios" />
-    <file src="..\Xamarin.Forms.Core\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Core.*mdb" target="lib\net6.0-ios" />
-    <file src="..\build\docs\Xamarin.Forms.Core.xml" target="lib\net6.0-ios" />
-    <file src="..\build\docs\Xamarin.Forms.Xaml.xml" target="lib\net6.0-ios" />
-    <file src="..\build\docs\**\Xamarin.Forms.Core.xml" target="lib\net6.0-ios" />
-    <file src="..\build\docs\**\Xamarin.Forms.Xaml.xml" target="lib\net6.0-ios" />
-    <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.dll" target="lib\net6.0-ios" />
-    <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.*pdb" target="lib\net6.0-ios" />
-    <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.*mdb" target="lib\net6.0-ios" />
-    <file src="..\Stubs\Xamarin.Forms.Platform.iOS\bin\iPhone\$Configuration$\Xamarin.Forms.Platform.dll" target="lib\net6.0-ios" />
+    <!--.NET 7 iOS-->
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\Xamarin.Forms.Platform.iOS.dll" target="lib\net7.0-ios" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\Xamarin.Forms.Platform.iOS.*pdb" target="lib\net7.0-ios" />
+    <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\net7.0-ios\Xamarin.Forms.Platform.iOS.*mdb" target="lib\net7.0-ios" />
+    <file src="..\Xamarin.Forms.Core\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Core.dll" target="lib\net7.0-ios" />
+    <file src="..\Xamarin.Forms.Core\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Core.*pdb" target="lib\net7.0-ios" />
+    <file src="..\Xamarin.Forms.Core\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Core.*mdb" target="lib\net7.0-ios" />
+    <file src="..\build\docs\Xamarin.Forms.Core.xml" target="lib\net7.0-ios" />
+    <file src="..\build\docs\Xamarin.Forms.Xaml.xml" target="lib\net7.0-ios" />
+    <file src="..\build\docs\**\Xamarin.Forms.Core.xml" target="lib\net7.0-ios" />
+    <file src="..\build\docs\**\Xamarin.Forms.Xaml.xml" target="lib\net7.0-ios" />
+    <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.dll" target="lib\net7.0-ios" />
+    <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.*pdb" target="lib\net7.0-ios" />
+    <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.*mdb" target="lib\net7.0-ios" />
+    <file src="..\Stubs\Xamarin.Forms.Platform.iOS\bin\iPhone\$Configuration$\Xamarin.Forms.Platform.dll" target="lib\net7.0-ios" />
 
     <!--UWP 14393-->
     <!--
