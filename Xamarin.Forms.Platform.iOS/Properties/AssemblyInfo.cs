@@ -68,3 +68,4 @@ using UIKit;
 [assembly: Xamarin.Forms.Dependency(typeof(ResourcesProvider))]
 [assembly: ResolutionGroupName("Xamarin")]
 [assembly: LinkerSafe]
+[assembly: AssemblyMetadata("IsTrimmable", "True")]
