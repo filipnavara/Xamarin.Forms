@@ -32,11 +32,11 @@ namespace Xamarin.Forms.Platform.MacOS
 		AutoPackage = 1 << 2
 	}
 
-	public class VisualElementRenderer<TElement> : NativeView, IVisualElementRenderer, IEffectControlProvider where TElement : VisualElement
+	public abstract class VisualElementRenderer : NativeView, IVisualElementRenderer, IEffectControlProvider
 	{
 		readonly NativeColor _defaultColor = NativeColor.Clear;
 
-		readonly List<EventHandler<VisualElementChangedEventArgs>> _elementChangedHandlers = new List<EventHandler<VisualElementChangedEventArgs>>();
+		protected readonly List<EventHandler<VisualElementChangedEventArgs>> _elementChangedHandlers = new List<EventHandler<VisualElementChangedEventArgs>>();
 
 		readonly PropertyChangedEventHandler _propertyChangedHandler;
 		string _defaultAccessibilityLabel;
@@ -74,7 +74,7 @@ namespace Xamarin.Forms.Platform.MacOS
 		}
 #endif
 
-		public TElement Element { get; private set; }
+		public VisualElement Element { get; private set; }
 
 		protected bool AutoPackage
 		{
@@ -155,7 +155,7 @@ namespace Xamarin.Forms.Platform.MacOS
 
 		void IVisualElementRenderer.SetElement(VisualElement element)
 		{
-			SetElement((TElement)element);
+			SetElementInternal(element);
 			UpdateTabStop();
 			UpdateTabIndex();
 		}
@@ -166,8 +166,6 @@ namespace Xamarin.Forms.Platform.MacOS
 		}
 
 		public virtual NativeViewController ViewController => null;
-
-		public event EventHandler<ElementChangedEventArgs<TElement>> ElementChanged;
 
 		protected int TabIndex { get; set; } = 0;
 
@@ -251,7 +249,7 @@ namespace Xamarin.Forms.Platform.MacOS
 		void TabBackward(UIKeyCommand cmd) => FocusSearch(forwardDirection: false);
 #endif
 
-		public void SetElement(TElement element)
+		protected void SetElementInternal(VisualElement element)
 		{
 			var oldElement = Element;
 			Element = element;
@@ -293,7 +291,7 @@ namespace Xamarin.Forms.Platform.MacOS
 
 			}
 
-			OnElementChanged(new ElementChangedEventArgs<TElement>(oldElement, element));
+			OnElementChangedInternal(oldElement, element);
 
 			if (element != null)
 				SendVisualElementInitialized(element, this);
@@ -394,24 +392,13 @@ namespace Xamarin.Forms.Platform.MacOS
 				if (Element != null)
 				{
 					Element.ClearValue(Platform.RendererProperty);
-					SetElement(null);
+					SetElementInternal(null);
 				}
 			}
 			base.Dispose(disposing);
 		}
 
-		protected virtual void OnElementChanged(ElementChangedEventArgs<TElement> e)
-		{
-			var args = new VisualElementChangedEventArgs(e.OldElement, e.NewElement);
-			for (var i = 0; i < _elementChangedHandlers.Count; i++)
-				_elementChangedHandlers[i](this, args);
-
-			ElementChanged?.Invoke(this, e);
-#if __MOBILE__
-			if (e.NewElement != null)
-				SetBlur((BlurEffectStyle)e.NewElement.GetValue(PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty));
-#endif
-		}
+		protected abstract void OnElementChangedInternal(VisualElement oldElement, VisualElement element);
 
 		protected virtual void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
@@ -571,6 +558,29 @@ namespace Xamarin.Forms.Platform.MacOS
 				return true;
 			else
 				return IsOnViewCell(element.Parent);
+		}
+	}
+
+	public class VisualElementRenderer<TElement> : VisualElementRenderer where TElement : VisualElement
+	{
+		public new TElement Element => (TElement)base.Element;
+
+		public event EventHandler<ElementChangedEventArgs<TElement>> ElementChanged;
+
+		public void SetElement(TElement element) => SetElementInternal(element);
+
+		protected override void OnElementChangedInternal(VisualElement oldElement, VisualElement element)
+		{
+			OnElementChanged(new ElementChangedEventArgs<TElement>((TElement)oldElement, (TElement)element));
+		}
+
+		protected virtual void OnElementChanged(ElementChangedEventArgs<TElement> e)
+		{
+			ElementChanged?.Invoke(this, e);
+#if __MOBILE__
+			if (e.NewElement != null)
+				SetBlur((BlurEffectStyle)e.NewElement.GetValue(PlatformConfiguration.iOSSpecific.VisualElement.BlurEffectProperty));
+#endif
 		}
 	}
 }
