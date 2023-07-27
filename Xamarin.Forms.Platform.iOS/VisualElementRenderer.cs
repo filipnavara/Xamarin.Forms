@@ -321,8 +321,7 @@ namespace Xamarin.Forms.Platform.MacOS
 
 		public override SizeF SizeThatFits(SizeF size)
 		{
-			ResolveLayoutChanges();
-			return new SizeF(0, 0);
+			return SizeThatFitsInternal(size);
 		}
 
 		public override void LayoutSubviews()
@@ -331,6 +330,11 @@ namespace Xamarin.Forms.Platform.MacOS
 
 			base.LayoutSubviews();
 
+			LayoutSubviewsInternal();
+		}
+
+		protected virtual void LayoutSubviewsInternal()
+		{
 			if (_blur != null && Superview != null)
 			{
 				_blur.Frame = Frame;
@@ -342,6 +346,12 @@ namespace Xamarin.Forms.Platform.MacOS
 
 			if (hasBackground)
 				NativeView.UpdateBackgroundLayer();
+		}
+
+		protected virtual SizeF SizeThatFitsInternal(SizeF size)
+		{
+			ResolveLayoutChanges();
+			return new SizeF(0, 0);
 		}
 
 #else
@@ -576,6 +586,10 @@ namespace Xamarin.Forms.Platform.MacOS
 
 		protected virtual void OnElementChanged(ElementChangedEventArgs<TElement> e)
 		{
+			var args = new VisualElementChangedEventArgs(e.OldElement, e.NewElement);
+			for (var i = 0; i < _elementChangedHandlers.Count; i++)
+				_elementChangedHandlers[i](this, args);
+
 			ElementChanged?.Invoke(this, e);
 #if __MOBILE__
 			if (e.NewElement != null)
