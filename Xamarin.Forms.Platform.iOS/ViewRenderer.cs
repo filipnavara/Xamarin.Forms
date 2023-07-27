@@ -26,6 +26,34 @@ namespace Xamarin.Forms.Platform.MacOS
 
 	public abstract class ViewRenderer : ViewRenderer<View, NativeView>
 	{
+#if __MOBILE__
+		public override void LayoutSubviews()
+		{
+			base.LayoutSubviews();
+			if (Control != null && Element != null)
+				Control.Frame = new RectangleF(0, 0, (nfloat)Element.Width, (nfloat)Element.Height);
+		}
+
+		public override SizeF SizeThatFits(SizeF size)
+		{
+			if (Control == null)
+				return (base.SizeThatFits(size));
+
+			return Control.SizeThatFits(size);
+		}
+#else
+		public override SizeRequest GetDesiredSize(double widthConstraint, double heightConstraint)
+		{
+			return (Control ?? NativeView).GetSizeRequest(widthConstraint, heightConstraint);
+		}
+
+		public override void Layout()
+		{
+			if (Control != null)
+				Control.Frame = new RectangleF(0, 0, (nfloat)Element.Width, (nfloat)Element.Height);
+			base.Layout();
+		}
+#endif
 	}
 
 	public abstract class ViewRenderer<TView, TNativeView> : VisualElementRenderer<TView>, IVisualNativeElementRenderer, ITabStop where TView : View where TNativeView : NativeView
@@ -71,17 +99,17 @@ namespace Xamarin.Forms.Platform.MacOS
 
 		NativeView ITabStop.TabStop => Control;
 #if __MOBILE__
-		public override void LayoutSubviews()
+		protected override void LayoutSubviewsInternal()
 		{
-			base.LayoutSubviews();
+			base.LayoutSubviewsInternal();
 			if (Control != null && Element != null)
 				Control.Frame = new RectangleF(0, 0, (nfloat)Element.Width, (nfloat)Element.Height);
 		}
 
-		public override SizeF SizeThatFits(SizeF size)
+		protected override SizeF SizeThatFitsInternal(SizeF size)
 		{
 			if (Control == null)
-				return (base.SizeThatFits(size));
+				return (base.SizeThatFitsInternal(size));
 
 			return Control.SizeThatFits(size);
 		}
