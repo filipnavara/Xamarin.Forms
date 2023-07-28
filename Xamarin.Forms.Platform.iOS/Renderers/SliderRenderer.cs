@@ -192,12 +192,12 @@ namespace Xamarin.Forms.Platform.iOS
 				{
 					if (_sliderTapRecognizer == null)
 					{
-						_sliderTapRecognizer = new UITapGestureRecognizer((recognizer) =>
+						_sliderTapRecognizer = new UITapGestureRecognizer(() =>
 						{
 							var control = Control;
-							if (control != null)
+							if (control != null && _sliderTapRecognizer != null)
 							{
-								var tappedLocation = recognizer.LocationInView(control);
+								var tappedLocation = _sliderTapRecognizer.LocationInView(control);
 								if (tappedLocation != default)
 								{
 									var val = (tappedLocation.X - control.Frame.X) * control.MaxValue / control.Frame.Size.Width;

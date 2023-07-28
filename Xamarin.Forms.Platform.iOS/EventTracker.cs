@@ -438,7 +438,8 @@ namespace Xamarin.Forms.Platform.MacOS
 #if __MOBILE__
 		UIPanGestureRecognizer CreatePanRecognizer(int numTouches, Action<UIPanGestureRecognizer> action)
 		{
-			var result = new UIPanGestureRecognizer(action);
+			var capture = new UIPanGestureRecognizer[1];
+			var result = capture[0] = new UIPanGestureRecognizer(() => action(capture[0]));
 			result.MinimumNumberOfTouches = result.MaximumNumberOfTouches = (uint)numTouches;
 
 			// enable touches to pass through so that underlying scrolling views will still receive the pan
@@ -448,7 +449,8 @@ namespace Xamarin.Forms.Platform.MacOS
 
 		UIPinchGestureRecognizer CreatePinchRecognizer(Action<UIPinchGestureRecognizer> action)
 		{
-			var result = new UIPinchGestureRecognizer(action);
+			var capture = new UIPinchGestureRecognizer[1];
+			var result = capture[0] = new UIPinchGestureRecognizer(() => action(capture[0]));
 			return result;
 		}
 
@@ -464,7 +466,8 @@ namespace Xamarin.Forms.Platform.MacOS
 
 		UITapGestureRecognizer CreateTapRecognizer(int numTaps, Action<UITapGestureRecognizer> action, int numFingers = 1)
 		{
-			var result = new UITapGestureRecognizer(action)
+			var capture = new UITapGestureRecognizer[1];
+			var result = capture[0] = new UITapGestureRecognizer(() => action(capture[0]))
 			{
 				NumberOfTouchesRequired = (uint)numFingers,
 				NumberOfTapsRequired = (uint)numTaps,
