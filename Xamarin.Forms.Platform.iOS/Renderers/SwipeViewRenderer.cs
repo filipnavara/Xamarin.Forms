@@ -386,14 +386,14 @@ namespace Xamarin.Forms.Platform.iOS
 			}
 		}
 
-		void HandlePan(UIPanGestureRecognizer panGestureRecognizer)
+		void HandlePan()
 		{
-			if (_isSwipeEnabled && panGestureRecognizer != null)
+			if (_isSwipeEnabled && _panGestureRecognizer != null)
 			{
-				CGPoint point = panGestureRecognizer.LocationInView(this);
+				CGPoint point = _panGestureRecognizer.LocationInView(this);
 				var navigationController = GetUINavigationController(GetViewController());
 
-				switch (panGestureRecognizer.State)
+				switch (_panGestureRecognizer.State)
 				{
 					case UIGestureRecognizerState.Began:
 						if (navigationController != null)

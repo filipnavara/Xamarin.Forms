@@ -449,11 +449,17 @@ namespace Xamarin.Forms.Platform.iOS
 			}
 
 			var center = new PointF();
-			_panGesture = new UIPanGestureRecognizer(g =>
+			_panGesture = new UIPanGestureRecognizer(() =>
 			{
+				var g = _panGesture;
 				var isRTL = (Element as IVisualElementController)?.EffectiveFlowDirection.IsRightToLeft() == true;
 
 				int directionModifier = isRTL ? -1 : 1;
+
+				if (g == null)
+				{
+					return;
+				}
 
 				switch (g.State)
 				{

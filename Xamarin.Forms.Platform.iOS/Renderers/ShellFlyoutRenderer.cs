@@ -337,8 +337,14 @@ namespace Xamarin.Forms.Platform.iOS
 		[Internals.Preserve(Conditional = true)]
 		void TabBackward(UIKeyCommand cmd) => FocusSearch(forwardDirection: false);
 
-		void HandlePanGesture(UIPanGestureRecognizer pan)
+		void HandlePanGesture()
 		{
+			UIPanGestureRecognizer pan = PanGestureRecognizer;
+			if (pan == null)
+			{
+				return;
+			}
+
 			var translation = pan.TranslationInView(View).X;
 			double openProgress = 0;
 			double openLimit = Flyout.ViewController.View.Frame.Width;

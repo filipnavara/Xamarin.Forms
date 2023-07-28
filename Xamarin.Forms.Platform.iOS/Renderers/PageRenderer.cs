@@ -238,7 +238,7 @@ namespace Xamarin.Forms.Platform.iOS
 			if (NativeView == null)
 				return;
 
-			var uiTapGestureRecognizer = new UITapGestureRecognizer(a => NativeView?.EndEditing(true));
+			var uiTapGestureRecognizer = new UITapGestureRecognizer(() => NativeView?.EndEditing(true));
 
 			uiTapGestureRecognizer.ShouldRecognizeSimultaneously = (recognizer, gestureRecognizer) => true;
 			uiTapGestureRecognizer.ShouldReceiveTouch = OnShouldReceiveTouch;
