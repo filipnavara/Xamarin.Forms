@@ -5,6 +5,10 @@ on:
     branches:
     - 'net7'
     - 'net7-*'
+  pull_request:
+    branches:
+    - 'net7'
+    - 'net7-*'
 
 jobs:
   build:
