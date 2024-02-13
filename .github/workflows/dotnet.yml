@@ -23,8 +23,8 @@ jobs:
         dotnet-version: 8.0.x
     - name: Add msbuild to PATH
       uses: microsoft/setup-msbuild@v2
-    - name: Install iOS workload
-      run: dotnet workload install ios -s https://api.nuget.org/v3/index.json
+    - name: Install iOS and Android workload
+      run: dotnet workload install ios android -s https://api.nuget.org/v3/index.json
     - name: Install older NuGet.exe
       run: |
         curl https://dist.nuget.org/win-x86-commandline/v5.8.1/nuget.exe --output nuget.exe
