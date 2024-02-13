@@ -9,6 +9,10 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <RootNamespace>Xamarin.Forms.Platform.Android.AppLinks</RootNamespace>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
+    <SupportedOSPlatformVersion>23.0</SupportedOSPlatformVersion>
+    <WarningsNotAsErrors>CS0618</WarningsNotAsErrors>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)'=='Debug' ">
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
