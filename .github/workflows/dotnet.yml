@@ -12,7 +12,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
       with:
@@ -21,6 +21,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 8.0.x
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v2
     - name: Install iOS workload
       run: dotnet workload install ios -s https://api.nuget.org/v3/index.json
     - name: Install older NuGet.exe
@@ -29,7 +31,7 @@ jobs:
         chmod +x nuget.exe
     - name: Build
       run: msbuild Xamarin.Forms.sln /p:Configuration=Release /p:BUILDVERSION="${GITHUB_RUN_NUMBER}" /p:BUILD_BUILDID="${GITHUB_RUN_NUMBER}" /restore
-    - name: Build (.NET 7 / iOS)
+    - name: Build (.NET 8 / iOS)
       run: dotnet build Xamarin.Forms.Platform.iOS /p:Configuration=Release /p:Net8Build=true /p:BUILDVERSION="${GITHUB_RUN_NUMBER}" /p:BUILD_BUILDID="${GITHUB_RUN_NUMBER}" /p:_SdkIgnoreMSBuildCoreWarning=true /p:_ExtrasSkipTargetsCheck=true /restore
     - name: Pack
       run: |
