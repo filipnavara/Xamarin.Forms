@@ -130,8 +130,8 @@
     <file src="..\Xamarin.Forms.Core\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Core.*mdb" target="lib\netstandard2.0" />
     <file src="..\build\docs\Xamarin.Forms.Core.xml" target="lib\netstandard2.0" />
     <file src="..\build\docs\Xamarin.Forms.Xaml.xml" target="lib\netstandard2.0" />
-    <file src="..\build\docs\**\Xamarin.Forms.Core.xml" target="lib\netstandard2.0" />
-    <file src="..\build\docs\**\Xamarin.Forms.Xaml.xml" target="lib\netstandard2.0" />
+    <!--<file src="..\build\docs\**\Xamarin.Forms.Core.xml" target="lib\netstandard2.0" />
+    <file src="..\build\docs\**\Xamarin.Forms.Xaml.xml" target="lib\netstandard2.0" />-->
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.dll" target="lib\netstandard2.0" />
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.*pdb" target="lib\netstandard2.0" />
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.*mdb" target="lib\netstandard2.0" />
@@ -218,8 +218,8 @@
     <file src="..\Xamarin.Forms.Core\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Core.*pdb" target="lib\MonoAndroid13.0" />
     <file src="..\build\docs\Xamarin.Forms.Core.xml" target="lib\MonoAndroid13.0" />
     <file src="..\build\docs\Xamarin.Forms.Xaml.xml" target="lib\MonoAndroid13.0" />
-    <file src="..\build\docs\**\Xamarin.Forms.Core.xml" target="lib\MonoAndroid13.0" />
-    <file src="..\build\docs\**\Xamarin.Forms.Xaml.xml" target="lib\MonoAndroid13.0" />
+    <!--<file src="..\build\docs\**\Xamarin.Forms.Core.xml" target="lib\MonoAndroid13.0" />
+    <file src="..\build\docs\**\Xamarin.Forms.Xaml.xml" target="lib\MonoAndroid13.0" />-->
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.dll" target="lib\MonoAndroid13.0" />
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.*pdb" target="lib\MonoAndroid13.0" />
     <file src="..\Stubs\Xamarin.Forms.Platform.Android\bin\$Configuration$\MonoAndroid13.0\Xamarin.Forms.Platform.dll" target="lib\MonoAndroid13.0" />
@@ -233,8 +233,8 @@
     <file src="..\Xamarin.Forms.Core\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Core.*pdb" target="lib\net8.0-android" />
     <file src="..\build\docs\Xamarin.Forms.Core.xml" target="lib\net8.0-android" />
     <file src="..\build\docs\Xamarin.Forms.Xaml.xml" target="lib\net8.0-android" />
-    <file src="..\build\docs\**\Xamarin.Forms.Core.xml" target="lib\net8.0-android" />
-    <file src="..\build\docs\**\Xamarin.Forms.Xaml.xml" target="lib\net8.0-android" />
+    <!--<file src="..\build\docs\**\Xamarin.Forms.Core.xml" target="lib\net8.0-android" />
+    <file src="..\build\docs\**\Xamarin.Forms.Xaml.xml" target="lib\net8.0-android" />-->
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.dll" target="lib\net8.0-android" />
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.*pdb" target="lib\net8.0-android" />
     <file src="..\Stubs\Xamarin.Forms.Platform.Android\bin\$Configuration$\net8.0-android\Xamarin.Forms.Platform.dll" target="lib\net8.0-android" />
@@ -248,8 +248,8 @@
     <file src="..\Xamarin.Forms.Core\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Core.*mdb" target="lib\Xamarin.iOS10" />
     <file src="..\build\docs\Xamarin.Forms.Core.xml" target="lib\Xamarin.iOS10" />
     <file src="..\build\docs\Xamarin.Forms.Xaml.xml" target="lib\Xamarin.iOS10" />
-    <file src="..\build\docs\**\Xamarin.Forms.Core.xml" target="lib\Xamarin.iOS10" />
-    <file src="..\build\docs\**\Xamarin.Forms.Xaml.xml" target="lib\Xamarin.iOS10" />
+    <!--<file src="..\build\docs\**\Xamarin.Forms.Core.xml" target="lib\Xamarin.iOS10" />
+    <file src="..\build\docs\**\Xamarin.Forms.Xaml.xml" target="lib\Xamarin.iOS10" />-->
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.dll" target="lib\Xamarin.iOS10" />
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.*pdb" target="lib\Xamarin.iOS10" />
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.*mdb" target="lib\Xamarin.iOS10" />
@@ -264,8 +264,8 @@
     <file src="..\Xamarin.Forms.Core\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Core.*mdb" target="lib\net8.0-ios" />
     <file src="..\build\docs\Xamarin.Forms.Core.xml" target="lib\net8.0-ios" />
     <file src="..\build\docs\Xamarin.Forms.Xaml.xml" target="lib\net8.0-ios" />
-    <file src="..\build\docs\**\Xamarin.Forms.Core.xml" target="lib\net8.0-ios" />
-    <file src="..\build\docs\**\Xamarin.Forms.Xaml.xml" target="lib\net8.0-ios" />
+    <!--<file src="..\build\docs\**\Xamarin.Forms.Core.xml" target="lib\net8.0-ios" />
+    <file src="..\build\docs\**\Xamarin.Forms.Xaml.xml" target="lib\net8.0-ios" />-->
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.dll" target="lib\net8.0-ios" />
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.*pdb" target="lib\net8.0-ios" />
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.*mdb" target="lib\net8.0-ios" />
