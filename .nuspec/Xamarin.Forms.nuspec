@@ -226,6 +226,7 @@
 
     <!--.NET 8 Android-->
     <file src="..\Xamarin.Forms.Platform.Android\bin\$Configuration$\net8.0-android\Xamarin.Forms.Platform.Android.dll" target="lib\net8.0-android23.0" />
+    <file src="..\Xamarin.Forms.Platform.Android\bin\$Configuration$\net8.0-android\Xamarin.Forms.Platform.Android.aar" target="lib\net8.0-android23.0" />
     <file src="..\Xamarin.Forms.Platform.Android\bin\$Configuration$\net8.0-android\Xamarin.Forms.Platform.Android.*pdb" target="lib\net8.0-android23.0" />
     <file src="..\Xamarin.Forms.Platform.Android.FormsViewGroup\bin\$Configuration$\FormsViewGroup.dll" target="lib\net8.0-android23.0" />
     <file src="..\Xamarin.Forms.Platform.Android.FormsViewGroup\bin\$Configuration$\FormsViewGroup.*pdb" target="lib\net8.0-android23.0" />
@@ -238,6 +239,7 @@
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.dll" target="lib\net8.0-android23.0" />
     <file src="..\Xamarin.Forms.Xaml\bin\$Configuration$\netstandard2.0\Xamarin.Forms.Xaml.*pdb" target="lib\net8.0-android23.0" />
     <file src="..\Stubs\Xamarin.Forms.Platform.Android\bin\$Configuration$\net8.0-android\Xamarin.Forms.Platform.dll" target="lib\net8.0-android23.0" />
+    <file src="..\Stubs\Xamarin.Forms.Platform.Android\bin\$Configuration$\net8.0-android\Xamarin.Forms.Platform.aar" target="lib\net8.0-android23.0" />
 
     <!--iPhone Unified-->
     <file src="..\Xamarin.Forms.Platform.iOS\bin\$Configuration$\xamarin.ios10\Xamarin.Forms.Platform.iOS.dll" target="lib\Xamarin.iOS10" />
