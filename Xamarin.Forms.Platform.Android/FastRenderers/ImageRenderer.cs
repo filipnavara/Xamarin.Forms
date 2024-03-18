@@ -6,8 +6,10 @@ using Android.Graphics;
 using Android.Views;
 using AndroidX.Core.View;
 using Xamarin.Forms.Internals;
+using static Android.Views.View;
 using AImageView = Android.Widget.ImageView;
 using AView = Android.Views.View;
+using ALayoutChangeEventArgs = Android.Views.View.LayoutChangeEventArgs;
 
 namespace Xamarin.Forms.Platform.Android.FastRenderers
 {
@@ -15,6 +17,7 @@ namespace Xamarin.Forms.Platform.Android.FastRenderers
 		ILayoutChanges
 	{
 		bool _hasLayoutOccurred;
+		EventHandler<ALayoutChangeEventArgs> _layoutChanged;
 		bool _disposed;
 		Image _element;
 		bool _skipInvalidate;
@@ -66,8 +69,11 @@ namespace Xamarin.Forms.Platform.Android.FastRenderers
 
 		protected override void OnLayout(bool changed, int left, int top, int right, int bottom)
 		{
+			var args = new ALayoutChangeEventArgs(left, top, right, bottom, this.Left, this.Top, this.Right, this.Bottom);
 			base.OnLayout(changed, left, top, right, bottom);
 			_hasLayoutOccurred = true;
+			if (changed)
+				_layoutChanged?.Invoke(this, args);
 		}
 
 		public override void Invalidate()
@@ -195,6 +201,12 @@ namespace Xamarin.Forms.Platform.Android.FastRenderers
 		}
 
 		bool ILayoutChanges.HasLayoutOccurred => _hasLayoutOccurred;
+
+		event EventHandler<ALayoutChangeEventArgs> ILayoutChanges.LayoutChange
+		{
+			add { _layoutChanged += value; }
+			remove { _layoutChanged -= value; }
+		}
 
 		void OnAnimationStopped(object sender, FormsAnimationDrawableStateEventArgs e) =>
 			ImageElementManager.OnAnimationStopped(Element, e);
