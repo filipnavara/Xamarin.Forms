@@ -118,6 +118,15 @@ namespace Xamarin.Forms.Platform.Android
 				var spanStartOffset = spannableString.GetSpanStart(startSpan);
 				var spanEndOffset = spannableString.GetSpanEnd(endSpan);
 
+				var thisLine = layout.GetLineForOffset(spanEndOffset);
+				var lineStart = layout.GetLineStart(thisLine);
+				var lineEnd = layout.GetLineEnd(thisLine);
+
+				//If this is true, spanEndOffset has the value for another line that belong to the next span and not it self. 
+				//So it should be rearranged to value not pass the lineEnd.
+				if (spanEndOffset > (lineEnd - lineStart))
+					spanEndOffset = lineEnd;
+
 				var spanStartLine = layout.GetLineForOffset(spanStartOffset);
 				var spanEndLine = layout.GetLineForOffset(spanEndOffset);
 
