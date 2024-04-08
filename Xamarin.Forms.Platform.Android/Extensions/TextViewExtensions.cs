@@ -118,15 +118,6 @@ namespace Xamarin.Forms.Platform.Android
 				var spanStartOffset = spannableString.GetSpanStart(startSpan);
 				var spanEndOffset = spannableString.GetSpanEnd(endSpan);
 
-				var thisLine = layout.GetLineForOffset(spanEndOffset);
-				var lineStart = layout.GetLineStart(thisLine);
-				var lineEnd = layout.GetLineEnd(thisLine);
-
-				//If this is true, spanEndOffset has the value for another line that belong to the next span and not it self. 
-				//So it should be rearranged to value not pass the lineEnd.
-				if (spanEndOffset > (lineEnd - lineStart))
-					spanEndOffset = lineEnd;
-
 				var spanStartLine = layout.GetLineForOffset(spanStartOffset);
 				var spanEndLine = layout.GetLineForOffset(spanEndOffset);
 
@@ -139,13 +130,14 @@ namespace Xamarin.Forms.Platform.Android
 
 					var lineHeight = bounds.Height();
 					var lineStartOffset = layout.GetLineStart(curLine);
+					var lineEndOffset = layout.GetLineEnd(curLine);
 					var lineVisibleEndOffset = layout.GetLineVisibleEnd(curLine);
 
-					var startOffset = (curLine == spanStartLine) ? spanStartOffset : lineStartOffset;
+					var startOffset = (curLine == spanStartLine) ? Math.Min(lineEndOffset, spanStartOffset) : lineStartOffset;
 					var spanStartX = (int)layout.GetPrimaryHorizontal(startOffset);
 
-					var endOffset = (curLine == spanEndLine) ? spanEndOffset : lineVisibleEndOffset;
-					;
+					var endOffset = (curLine == spanEndLine) ? Math.Min(lineEndOffset, spanEndOffset) : lineVisibleEndOffset;
+
 					var spanEndX = (int)layout.GetSecondaryHorizontal(endOffset);
 
 					var spanWidth = spanEndX - spanStartX;
