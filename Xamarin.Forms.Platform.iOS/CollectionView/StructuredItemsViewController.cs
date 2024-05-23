@@ -72,7 +72,7 @@ namespace Xamarin.Forms.Platform.iOS
 			if (footerView != null)
 				footerHeight = footerView.Frame.Height;
 
-			return new CGRect(CollectionView.Frame.X, CollectionView.Frame.Y, CollectionView.Frame.Width, 
+			return new CGRect(CollectionView.Frame.X, CollectionView.Frame.Y, CollectionView.Frame.Width,
 				Math.Abs(CollectionView.Frame.Height - (headerHeight + footerHeight)));
 		}
 

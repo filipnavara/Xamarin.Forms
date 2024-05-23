@@ -1,8 +1,8 @@
 using System;
 using System.ComponentModel;
 using UIKit;
-using SizeF = CoreGraphics.CGSize;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
+using SizeF = CoreGraphics.CGSize;
 using Specifics = Xamarin.Forms.PlatformConfiguration.iOSSpecific.Slider;
 
 namespace Xamarin.Forms.Platform.iOS

@@ -5,8 +5,8 @@ using System.Threading;
 using CoreAnimation;
 using CoreGraphics;
 using Xamarin.Forms.Internals;
-using RectangleF = CoreGraphics.CGRect;
 using PointF = CoreGraphics.CGPoint;
+using RectangleF = CoreGraphics.CGRect;
 
 #if __MOBILE__
 using UIKit;
@@ -268,7 +268,7 @@ namespace Xamarin.Forms.Platform.MacOS
 #endif
 
 					// must reset transform prior to setting frame...
-					if(caLayer.AnchorPoint != _originalAnchor)
+					if (caLayer.AnchorPoint != _originalAnchor)
 						caLayer.AnchorPoint = _originalAnchor;
 
 					caLayer.Transform = transform;
@@ -503,6 +503,6 @@ namespace Xamarin.Forms.Platform.MacOS
 				return true;
 
 			return false;
-		}	
+		}
 	}
 }

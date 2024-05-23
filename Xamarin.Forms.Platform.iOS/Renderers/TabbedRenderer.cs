@@ -7,9 +7,9 @@ using UIKit;
 using Xamarin.Forms.Internals;
 using static Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page;
 using PageUIStatusBarAnimation = Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIStatusBarAnimation;
+using RectangleF = CoreGraphics.CGRect;
 using TabbedPageConfiguration = Xamarin.Forms.PlatformConfiguration.iOSSpecific.TabbedPage;
 using TranslucencyMode = Xamarin.Forms.PlatformConfiguration.iOSSpecific.TranslucencyMode;
-using RectangleF = CoreGraphics.CGRect;
 
 namespace Xamarin.Forms.Platform.iOS
 {

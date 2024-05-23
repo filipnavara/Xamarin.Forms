@@ -147,7 +147,7 @@ namespace Xamarin.Forms.Platform.iOS
 			Controller.UpdateItemsSource();
 		}
 
-		protected virtual void UpdateVisibility() 
+		protected virtual void UpdateVisibility()
 		{
 			Controller?.UpdateVisibility();
 		}

@@ -1,10 +1,10 @@
 ﻿using System;
-using System.Linq;
-using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
-using UIKit;
-using Foundation;
-using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Linq;
+using System.Threading.Tasks;
+using Foundation;
+using UIKit;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 
 namespace Xamarin.Forms.Platform.iOS
 {

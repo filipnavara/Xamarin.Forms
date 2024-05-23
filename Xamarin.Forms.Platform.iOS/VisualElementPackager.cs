@@ -53,7 +53,7 @@ namespace Xamarin.Forms.Platform.MacOS
 				}
 			}
 		}
-		
+
 		internal void Disconnect()
 		{
 			Disconnect(_element);

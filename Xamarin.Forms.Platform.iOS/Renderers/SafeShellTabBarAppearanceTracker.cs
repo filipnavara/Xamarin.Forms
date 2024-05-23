@@ -79,7 +79,7 @@ namespace Xamarin.Forms.Platform.iOS
 				tabBarAppearance.CompactInlineLayoutAppearance.Normal.TitleTextAttributes = tabBarAppearance.CompactInlineLayoutAppearance.Selected.TitleTextAttributes = new UIStringAttributes { ForegroundColor = tabBarTitleColor.ToUIColor(), ParagraphStyle = NSParagraphStyle.Default };
 				tabBarAppearance.CompactInlineLayoutAppearance.Normal.IconColor = tabBarAppearance.CompactInlineLayoutAppearance.Selected.IconColor = tabBarTitleColor.ToUIColor();
 			}
-			
+
 			//Set TabBarUnselectedColor
 			var tabBarUnselectedColor = appearanceElement.EffectiveTabBarUnselectedColor;
 
@@ -109,7 +109,7 @@ namespace Xamarin.Forms.Platform.iOS
 				tabBarAppearance.CompactInlineLayoutAppearance.Disabled.TitleTextAttributes = new UIStringAttributes { ForegroundColor = tabBarDisabledColor.ToUIColor(), ParagraphStyle = NSParagraphStyle.Default };
 				tabBarAppearance.CompactInlineLayoutAppearance.Disabled.IconColor = tabBarDisabledColor.ToUIColor();
 			}
-			
+
 			tabBar.StandardAppearance = tabBar.ScrollEdgeAppearance = tabBarAppearance;
 		}
 

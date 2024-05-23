@@ -88,7 +88,7 @@ namespace Xamarin.Forms.Platform.iOS
 				return;
 
 			_disposed = true;
-			
+
 			if (disposing && Control != null)
 			{
 				Control.CheckedChanged -= OnControlCheckedChanged;

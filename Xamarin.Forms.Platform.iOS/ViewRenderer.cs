@@ -164,7 +164,7 @@ namespace Xamarin.Forms.Platform.MacOS
 				if (Control != null && e.OldElement != null && e.OldElement.BackgroundColor != e.NewElement.BackgroundColor || e.NewElement.BackgroundColor != Color.Default)
 					SetBackgroundColor(e.NewElement.BackgroundColor);
 
-				if(Control != null && e.OldElement != null && e.OldElement.Background != e.NewElement.Background)
+				if (Control != null && e.OldElement != null && e.OldElement.Background != e.NewElement.Background)
 					SetBackground(e.NewElement.Background);
 
 				e.NewElement.FocusChangeRequested += ViewOnFocusChangeRequested;
@@ -332,7 +332,7 @@ namespace Xamarin.Forms.Platform.MacOS
 		{
 			if (Control == null)
 				return;
-				
+
 #if __MOBILE__
 			focusRequestArgs.Result = focusRequestArgs.Focus ? Control.BecomeFirstResponder() : Control.ResignFirstResponder();
 #else

@@ -74,7 +74,7 @@ namespace Xamarin.Forms.Platform.iOS
 			return preferredAttributes;
 		}
 
-		CGSize UpdateCellSize() 
+		CGSize UpdateCellSize()
 		{
 			// Measure this cell (including the Forms element) if there is no constrained size
 			var size = ConstrainedSize == default ? Measure() : ConstrainedSize;

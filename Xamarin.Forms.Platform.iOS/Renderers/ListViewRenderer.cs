@@ -7,9 +7,9 @@ using System.Linq;
 using Foundation;
 using UIKit;
 using Xamarin.Forms.Internals;
+using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using RectangleF = CoreGraphics.CGRect;
 using SizeF = CoreGraphics.CGSize;
-using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Specifics = Xamarin.Forms.PlatformConfiguration.iOSSpecific.ListView;
 
 namespace Xamarin.Forms.Platform.iOS
@@ -301,7 +301,7 @@ namespace Xamarin.Forms.Platform.iOS
 				UpdateRowHeight();
 
 				Control.Source = _dataSource = e.NewElement.HasUnevenRows ? new UnevenListViewDataSource(e.NewElement, _tableViewController) : new ListViewDataSource(e.NewElement, _tableViewController);
-			
+
 				UpdateHeader();
 				UpdateFooter();
 				UpdatePullToRefreshEnabled();
@@ -877,7 +877,7 @@ namespace Xamarin.Forms.Platform.iOS
 					// In this case, we will cache the specified cell heights asynchronously, which will be returned one time on
 					// table load by EstimatedHeight.
 
-					returnValue= 0;
+					returnValue = 0;
 				}
 				else
 				{
@@ -1529,7 +1529,8 @@ namespace Xamarin.Forms.Platform.iOS
 
 		public void SetTableViewCell(UITableViewCell value)
 		{
-			if (ReferenceEquals(_tableViewCell, value)) return;
+			if (ReferenceEquals(_tableViewCell, value))
+				return;
 			_tableViewCell?.RemoveFromSuperview();
 			_tableViewCell = value;
 			AddSubview(value);
@@ -1590,7 +1591,7 @@ namespace Xamarin.Forms.Platform.iOS
 						if (_refresh == null || _disposed)
 							return;
 
-						if( _isStartRefreshingPending)
+						if (_isStartRefreshingPending)
 							StartRefreshing();
 
 

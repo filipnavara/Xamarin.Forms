@@ -12,7 +12,7 @@ namespace Xamarin.Forms.Platform.iOS
 		// all these values were chosen to just match the android drawables that are used
 		const float _defaultSize = 18.0f;
 		const float _lineWidth = 2.0f;
-		Color  _tintColor;
+		Color _tintColor;
 		bool _isChecked;
 		bool _isEnabled;
 		float _minimumViewSize;
@@ -122,7 +122,7 @@ namespace Xamarin.Forms.Platform.iOS
 				bool changed = base.Enabled != value;
 				base.Enabled = value;
 
-				if(changed)
+				if (changed)
 					UpdateDisplay();
 			}
 		}
@@ -230,7 +230,7 @@ namespace Xamarin.Forms.Platform.iOS
 				return;
 
 			_disposed = true;
-			if(disposing)
+			if (disposing)
 				TouchUpInside -= OnTouchUpInside;
 
 			base.Dispose(disposing);

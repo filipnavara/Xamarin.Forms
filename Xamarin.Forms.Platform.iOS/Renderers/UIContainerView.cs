@@ -53,7 +53,7 @@ namespace Xamarin.Forms.Platform.iOS
 				ReMeasure();
 				return true;
 			}
-			
+
 			return false;
 		}
 
@@ -64,7 +64,7 @@ namespace Xamarin.Forms.Platform.iOS
 
 		void ReMeasure()
 		{
-			if(Height != null && MatchHeight)
+			if (Height != null && MatchHeight)
 			{
 				MeasuredHeight = Height.Value;
 			}

@@ -19,7 +19,7 @@ namespace Xamarin.Forms.Platform.iOS
 		{
 			_collectionViewController = collectionViewController;
 			CollectionView = _collectionViewController.CollectionView;
-		
+
 			_section = group < 0 ? 0 : group;
 			_grouped = group >= 0;
 
@@ -71,7 +71,7 @@ namespace Xamarin.Forms.Platform.iOS
 		{
 			for (int n = 0; n < Count; n++)
 			{
-				if(ItemComparer.AreEquals(this[n], item))
+				if (ItemComparer.AreEquals(this[n], item))
 				{
 					return NSIndexPath.Create(_section, n);
 				}
@@ -112,7 +112,7 @@ namespace Xamarin.Forms.Platform.iOS
 		void CollectionChanged(NotifyCollectionChangedEventArgs args)
 		{
 			// Force UICollectionView to get the internal accounting straight
-			if(!CollectionView.Hidden)
+			if (!CollectionView.Hidden)
 				CollectionView.NumberOfItemsInSection(_section);
 
 			switch (args.Action)
@@ -179,7 +179,7 @@ namespace Xamarin.Forms.Platform.iOS
 			}
 
 			// If we have a start index, we can be more clever about removing the item(s) (and get the nifty animations)
-			var count = args.OldItems.Count; 
+			var count = args.OldItems.Count;
 			Count -= count;
 
 			Update(() => CollectionView.DeleteItems(CreateIndexesFrom(startIndex, count)), args);
@@ -274,12 +274,12 @@ namespace Xamarin.Forms.Platform.iOS
 				return;
 			}
 
-			OnCollectionViewUpdating(args); 
-			update(); 
-			OnCollectionViewUpdated(args); 
+			OnCollectionViewUpdating(args);
+			update();
+			OnCollectionViewUpdated(args);
 		}
 
-		void OnCollectionViewUpdating(NotifyCollectionChangedEventArgs args) 
+		void OnCollectionViewUpdating(NotifyCollectionChangedEventArgs args)
 		{
 			CollectionViewUpdating?.Invoke(this, args);
 		}

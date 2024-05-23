@@ -1,15 +1,15 @@
 using System;
 using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using CoreGraphics;
 using Foundation;
 using UIKit;
 using Xamarin.Forms.Internals;
-using RectangleF = CoreGraphics.CGRect;
 using PreserveAttribute = Foundation.PreserveAttribute;
-using CoreGraphics;
-using System.Drawing;
+using RectangleF = CoreGraphics.CGRect;
 
 namespace Xamarin.Forms.Platform.iOS
 {

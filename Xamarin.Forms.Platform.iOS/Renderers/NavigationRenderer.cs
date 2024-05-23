@@ -451,7 +451,7 @@ namespace Xamarin.Forms.Platform.iOS
 			else if (e.PropertyName == NavigationPage.BarBackgroundColorProperty.PropertyName ||
 				e.PropertyName == NavigationPage.BarBackgroundProperty.PropertyName)
 			{
-				UpdateBarBackground();		
+				UpdateBarBackground();
 				UpdateHideNavigationBarSeparator();
 			}
 			else if (e.PropertyName == NavigationPage.BarTextColorProperty.PropertyName
@@ -868,7 +868,7 @@ namespace Xamarin.Forms.Platform.iOS
 					}
 				}
 
-				if(icon == null || containerController.NavigationItem.LeftBarButtonItem == null)
+				if (icon == null || containerController.NavigationItem.LeftBarButtonItem == null)
 				{
 					containerController.NavigationItem.LeftBarButtonItem = new UIBarButtonItem(FlyoutPage.Flyout.Title, UIBarButtonItemStyle.Plain, OnItemTapped);
 				}

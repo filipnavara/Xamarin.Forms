@@ -1,6 +1,6 @@
-﻿using CoreGraphics;
-using System;
+﻿using System;
 using System.ComponentModel;
+using CoreGraphics;
 using UIKit;
 
 namespace Xamarin.Forms.Platform.iOS
@@ -85,7 +85,7 @@ namespace Xamarin.Forms.Platform.iOS
 				return;
 
 			int previousIndex = GetPreviousIndex(_headerView);
-			if(_headerView != null)
+			if (_headerView != null)
 			{
 				_tableViewController.HeaderView = null;
 				_headerView.RemoveFromSuperview();

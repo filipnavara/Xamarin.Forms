@@ -114,7 +114,7 @@ namespace Xamarin.Forms.Platform.iOS
 		}
 
 		protected override UIButton CreateNativeControl()
-		{			
+		{
 			return new UIButton(UIButtonType.System);
 		}
 
