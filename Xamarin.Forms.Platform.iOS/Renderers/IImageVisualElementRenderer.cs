@@ -3,8 +3,8 @@ using NativeImageView = UIKit.UIImageView;
 using NativeImage = UIKit.UIImage;
 namespace Xamarin.Forms.Platform.iOS
 #else
-using NativeImageView = AppKit.NSImageView;
 using NativeImage = AppKit.NSImage;
+using NativeImageView = AppKit.NSImageView;
 namespace Xamarin.Forms.Platform.MacOS
 #endif
 {

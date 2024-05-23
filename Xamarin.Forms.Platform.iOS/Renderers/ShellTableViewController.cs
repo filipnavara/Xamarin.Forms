@@ -1,9 +1,9 @@
-﻿using CoreAnimation;
-using CoreGraphics;
-using System;
-using UIKit;
-using System.ComponentModel;
+﻿using System;
 using System.Collections.Specialized;
+using System.ComponentModel;
+using CoreAnimation;
+using CoreGraphics;
+using UIKit;
 
 namespace Xamarin.Forms.Platform.iOS
 {
@@ -67,11 +67,11 @@ namespace Xamarin.Forms.Platform.iOS
 			ShellFlyoutContentManager.UpdateVerticalScrollMode();
 		}
 
-		public void LayoutParallax() => 		
+		public void LayoutParallax() =>
 			ShellFlyoutContentManager.LayoutParallax();
 
 		public override void ViewDidLoad()
-		{			
+		{
 			base.ViewDidLoad();
 
 			TableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;

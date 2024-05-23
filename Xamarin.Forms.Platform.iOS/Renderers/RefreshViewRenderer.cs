@@ -194,7 +194,7 @@ namespace Xamarin.Forms.Platform.iOS
 					if (HasCollectionViewHeader(collectionView))
 					{
 						collectionView.BackgroundView = _refreshControl;
-						addedRefreshControl = true;	
+						addedRefreshControl = true;
 					}
 				}
 

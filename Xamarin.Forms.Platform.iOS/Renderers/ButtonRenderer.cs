@@ -1,10 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Diagnostics;
-using UIKit;
-using SizeF = CoreGraphics.CGSize;
-using PreserveAttribute = Foundation.PreserveAttribute;
 using CoreGraphics;
+using UIKit;
+using PreserveAttribute = Foundation.PreserveAttribute;
+using SizeF = CoreGraphics.CGSize;
 
 namespace Xamarin.Forms.Platform.iOS
 {

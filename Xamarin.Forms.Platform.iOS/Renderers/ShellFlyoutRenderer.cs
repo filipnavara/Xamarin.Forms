@@ -1,9 +1,9 @@
-﻿using CoreAnimation;
+﻿using System;
+using System.ComponentModel;
+using CoreAnimation;
 using CoreGraphics;
 using Foundation;
 using MediaPlayer;
-using System;
-using System.ComponentModel;
 using UIKit;
 
 namespace Xamarin.Forms.Platform.iOS
@@ -25,7 +25,7 @@ namespace Xamarin.Forms.Platform.iOS
 				if (SlideFlyoutTransition?.UpdateFlyoutSize(appearance.FlyoutHeight, appearance.FlyoutWidth) ==
 					true)
 				{
-					if(_layoutOccured)
+					if (_layoutOccured)
 						LayoutSidebar(false, true);
 				}
 			}

@@ -15,8 +15,8 @@ using UIKit;
 using WebKit;
 using Xamarin.Forms.Internals;
 using PreserveAttribute = Foundation.PreserveAttribute;
-using Uri = System.Uri;
 using RectangleF = CoreGraphics.CGRect;
+using Uri = System.Uri;
 
 namespace Xamarin.Forms.Platform.iOS
 {
@@ -46,7 +46,7 @@ namespace Xamarin.Forms.Platform.iOS
 		[Preserve(Conditional = true)]
 		public WkWebViewRenderer(WKWebViewConfiguration config) : base(RectangleF.Empty, config)
 		{
-		
+
 		}
 
 		// https://developer.apple.com/forums/thread/99674
@@ -174,7 +174,7 @@ namespace Xamarin.Forms.Platform.iOS
 		{
 			try
 			{
-				
+
 				var uri = new Uri(url);
 
 				var safeHostUri = new Uri($"{uri.Scheme}://{uri.Authority}", UriKind.Absolute);

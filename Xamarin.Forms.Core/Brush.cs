@@ -273,7 +273,7 @@ namespace Xamarin.Forms
 		static ImmutableBrush limeGreen;
 		public static SolidColorBrush LimeGreen => limeGreen ??= new ImmutableBrush(Color.LimeGreen);
 
-		static ImmutableBrush linen;		 
+		static ImmutableBrush linen;
 		public static SolidColorBrush Linen => linen ??= new ImmutableBrush(Color.Linen);
 
 		static ImmutableBrush magenta;
@@ -303,7 +303,7 @@ namespace Xamarin.Forms
 		static ImmutableBrush mediumSpringGreen;
 		public static SolidColorBrush MediumSpringGreen => mediumSpringGreen ??= new ImmutableBrush(Color.MediumSpringGreen);
 
-		static ImmutableBrush mediumTurquoise;	
+		static ImmutableBrush mediumTurquoise;
 		public static SolidColorBrush MediumTurquoise => mediumTurquoise ??= new ImmutableBrush(Color.MediumTurquoise);
 
 		static ImmutableBrush mediumVioletRed;

@@ -13,7 +13,7 @@ namespace Xamarin.Forms.Platform.iOS
 
 		public ListSource(IEnumerable<object> enumerable) : base(enumerable)
 		{
-			
+
 		}
 
 		public ListSource(IEnumerable enumerable)

@@ -1,6 +1,6 @@
-using Foundation;
 using System;
 using System.Collections.Generic;
+using Foundation;
 
 namespace Xamarin.Forms.Platform.iOS
 {

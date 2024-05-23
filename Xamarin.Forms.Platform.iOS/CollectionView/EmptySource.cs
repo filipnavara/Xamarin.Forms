@@ -9,7 +9,7 @@ namespace Xamarin.Forms.Platform.iOS
 
 		public int ItemCount => 0;
 
-		public bool Loop { get ; set; }
+		public bool Loop { get; set; }
 
 		public int LoopCount => 0;
 

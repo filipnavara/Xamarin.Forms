@@ -1,5 +1,5 @@
-using Foundation;
 using System;
+using Foundation;
 using UIKit;
 using Xamarin.Forms.Internals;
 
@@ -9,7 +9,7 @@ namespace Xamarin.Forms.Platform.iOS
 	{
 		public static void ApplyKeyboard(this IUITextInput textInput, Keyboard keyboard)
 		{
-			if(textInput is IUITextInputTraits traits)
+			if (textInput is IUITextInputTraits traits)
 				ApplyKeyboard(traits, keyboard);
 		}
 

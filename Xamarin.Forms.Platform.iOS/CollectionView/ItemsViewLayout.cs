@@ -105,7 +105,7 @@ namespace Xamarin.Forms.Platform.iOS
 			UpdateCellConstraints();
 		}
 
-		internal void SetInitialConstraints(CGSize size) 
+		internal void SetInitialConstraints(CGSize size)
 		{
 			_currentSize = size;
 			ConstrainTo(size);
@@ -123,7 +123,7 @@ namespace Xamarin.Forms.Platform.iOS
 					return new UIEdgeInsets(0, 0, 0, (nfloat)gridItemsLayout.HorizontalItemSpacing * collectionView.NumberOfItemsInSection(section));
 				}
 
-				return new UIEdgeInsets(0,0, (nfloat)gridItemsLayout.VerticalItemSpacing * collectionView.NumberOfItemsInSection(section), 0);
+				return new UIEdgeInsets(0, 0, (nfloat)gridItemsLayout.VerticalItemSpacing * collectionView.NumberOfItemsInSection(section), 0);
 			}
 
 			return UIEdgeInsets.Zero;
@@ -173,7 +173,7 @@ namespace Xamarin.Forms.Platform.iOS
 			// This is currently causing an infinite layout loop on iOS 15 https://github.com/xamarin/Xamarin.Forms/issues/15230
 			if (preferredAttributes.RepresentedElementKind == "UICollectionElementKindSectionHeader" && Forms.IsiOS154OrNewer)
 				return base.ShouldInvalidateLayout(preferredAttributes, originalAttributes);
-				
+
 			if (ItemSizingStrategy == ItemSizingStrategy.MeasureAllItems)
 			{
 				if (preferredAttributes.Bounds != originalAttributes.Bounds)
@@ -251,7 +251,7 @@ namespace Xamarin.Forms.Platform.iOS
 			PrepareCellsForLayout(CollectionView.GetVisibleSupplementaryViews(UICollectionElementKindSectionKey.Footer));
 		}
 
-		void PrepareCellsForLayout(UICollectionReusableView[] cells) 
+		void PrepareCellsForLayout(UICollectionReusableView[] cells)
 		{
 			for (int n = 0; n < cells.Length; n++)
 			{
@@ -389,7 +389,7 @@ namespace Xamarin.Forms.Platform.iOS
 					return defaultContext;
 
 				}
-				catch (MonoTouchException ex) when (ex.Name == "NSRangeException") 
+				catch (MonoTouchException ex) when (ex.Name == "NSRangeException")
 				{
 					Log.Warning("ItemsViewLayout", ex.ToString());
 				}
@@ -574,7 +574,7 @@ namespace Xamarin.Forms.Platform.iOS
 			return true;
 		}
 
-		internal bool TryGetCachedCellSize(object item, out CGSize size) 
+		internal bool TryGetCachedCellSize(object item, out CGSize size)
 		{
 			if (_cellSizeCache.TryGetValue(item, out CGSize internalSize))
 			{
@@ -586,12 +586,12 @@ namespace Xamarin.Forms.Platform.iOS
 			return false;
 		}
 
-		internal void CacheCellSize(object item, CGSize size) 
+		internal void CacheCellSize(object item, CGSize size)
 		{
 			_cellSizeCache[item] = size;
 		}
 
-		internal void ClearCellSizeCache() 
+		internal void ClearCellSizeCache()
 		{
 			_cellSizeCache.Clear();
 		}

@@ -36,7 +36,7 @@ namespace Xamarin.Forms.Platform.iOS
 				_defaultTint = navBar.TintColor;
 				_defaultTitleAttributes = navBar.TitleTextAttributes;
 			}
-						
+
 			if (Forms.IsiOS15OrNewer)
 				UpdateiOS15NavigationBarAppearance(controller, appearance);
 			else
@@ -129,7 +129,7 @@ namespace Xamarin.Forms.Platform.iOS
 		{
 			Dispose(true);
 		}
-				
+
 		#endregion
 	}
 }

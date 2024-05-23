@@ -1,9 +1,9 @@
-using System.Runtime.CompilerServices;
 using System.Reflection;
+using System.Runtime.CompilerServices;
+using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.iOS;
-using UIKit;
 
 // These renderers are now registered via the RenderWithAttribute in the iOS Forwarders project.
 #if ROOT_RENDERERS

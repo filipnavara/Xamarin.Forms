@@ -162,33 +162,33 @@ namespace Xamarin.Forms.Platform.iOS
 
 			static bool OnShouldReturn(UITextField view)
 			{
-                var realCell = GetRealCell<EntryCellTableViewCell>(view);
-                var handler = realCell?.KeyboardDoneButtonPressed;
-                if (handler != null)
-                    handler(realCell, EventArgs.Empty);
+				var realCell = GetRealCell<EntryCellTableViewCell>(view);
+				var handler = realCell?.KeyboardDoneButtonPressed;
+				if (handler != null)
+					handler(realCell, EventArgs.Empty);
 
-                view.ResignFirstResponder();
+				view.ResignFirstResponder();
 				return true;
 			}
 
-            static void TextFieldOnEditingChanged(object sender, EventArgs eventArgs)
+			static void TextFieldOnEditingChanged(object sender, EventArgs eventArgs)
 			{
-                var realCell = GetRealCell<EntryCellTableViewCell>(sender as UIView);
-                var handler = realCell?.TextFieldTextChanged;
-                if (handler != null)
-                    handler(realCell, EventArgs.Empty);
-            }
+				var realCell = GetRealCell<EntryCellTableViewCell>(sender as UIView);
+				var handler = realCell?.TextFieldTextChanged;
+				if (handler != null)
+					handler(realCell, EventArgs.Empty);
+			}
 
-            static T GetRealCell<T>(UIView view) where T : UIView
-            {
-                T realCell = null;
-                while (view.Superview != null && realCell == null)
-                {
-                    view = view.Superview;
-                    realCell = view as T;
-                }
-                return realCell;
-            }
+			static T GetRealCell<T>(UIView view) where T : UIView
+			{
+				T realCell = null;
+				while (view.Superview != null && realCell == null)
+				{
+					view = view.Superview;
+					realCell = view as T;
+				}
+				return realCell;
+			}
 		}
 	}
 }

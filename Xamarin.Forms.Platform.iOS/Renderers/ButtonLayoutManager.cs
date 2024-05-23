@@ -214,7 +214,7 @@ namespace Xamarin.Forms.Platform.iOS
 			Control.SetAttributedTitle(normal, UIControlState.Normal);
 			Control.SetAttributedTitle(highlighted, UIControlState.Highlighted);
 			Control.SetAttributedTitle(disabled, UIControlState.Disabled);
-			
+
 			UpdateEdgeInsets();
 		}
 

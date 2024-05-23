@@ -112,7 +112,7 @@ namespace Xamarin.Forms.Platform.iOS
 		public override void ViewDidLayoutSubviews()
 		{
 			base.ViewDidLayoutSubviews();
-			if(_currentShellItemRenderer != null)
+			if (_currentShellItemRenderer != null)
 				_currentShellItemRenderer.ViewController.View.Frame = View.Bounds;
 
 			SetElementSize(new Size(View.Bounds.Width, View.Bounds.Height));
@@ -128,7 +128,7 @@ namespace Xamarin.Forms.Platform.iOS
 		protected virtual IShellFlyoutRenderer CreateFlyoutRenderer()
 		{
 			// HACK
-			if(UIApplication.SharedApplication?.Delegate?.GetType()?.FullName == "XamarinFormsPreviewer.iOS.AppDelegate")
+			if (UIApplication.SharedApplication?.Delegate?.GetType()?.FullName == "XamarinFormsPreviewer.iOS.AppDelegate")
 			{
 				return new DesignerFlyoutRenderer(this);
 			}
@@ -201,7 +201,7 @@ namespace Xamarin.Forms.Platform.iOS
 			{
 				await OnCurrentItemChangedAsync();
 			}
-			catch(Exception exc)
+			catch (Exception exc)
 			{
 				Internals.Log.Warning(nameof(Shell), $"Failed on changing current item: {exc}");
 			}
@@ -233,7 +233,7 @@ namespace Xamarin.Forms.Platform.iOS
 			{
 				OnCurrentItemChanged();
 			}
-			else if(e.PropertyName == VisualElement.FlowDirectionProperty.PropertyName)
+			else if (e.PropertyName == VisualElement.FlowDirectionProperty.PropertyName)
 			{
 				UpdateFlowDirection(true);
 			}
@@ -282,7 +282,7 @@ namespace Xamarin.Forms.Platform.iOS
 
 			// This means the selected item changed while the active transition
 			// was finishing up
-			if(_incomingRenderer != value ||
+			if (_incomingRenderer != value ||
 				value.ShellItem != this.Shell.CurrentItem)
 			{
 				(value as IDisconnectable)?.Disconnect();
@@ -301,7 +301,7 @@ namespace Xamarin.Forms.Platform.iOS
 			View.SendSubviewToBack(newRenderer.ViewController.View);
 
 			newRenderer.ViewController.View.Frame = View.Bounds;
-			
+
 			if (oldRenderer != null)
 			{
 				var transition = CreateShellItemTransition();
@@ -319,7 +319,7 @@ namespace Xamarin.Forms.Platform.iOS
 			}
 
 			// current renderer is still valid
-			if(_currentShellItemRenderer == value)
+			if (_currentShellItemRenderer == value)
 			{
 				UpdateBackgroundColor();
 				UpdateFlowDirection();

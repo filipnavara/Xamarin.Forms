@@ -13,7 +13,7 @@ namespace Xamarin.Forms.Platform.iOS
 		public const int EmptyTag = 333;
 
 		public IItemsViewSource ItemsSource { get; protected set; }
-		
+
 		public TItemsView ItemsView { get; }
 		protected ItemsViewLayout ItemsViewLayout { get; set; }
 		bool _initialized;
@@ -62,7 +62,7 @@ namespace Xamarin.Forms.Platform.iOS
 			{
 				UnbindCells();
 				_measurementCells = null;
-			
+
 				ItemsSource?.Dispose();
 
 				CollectionView.Delegate = null;
@@ -120,9 +120,9 @@ namespace Xamarin.Forms.Platform.iOS
 
 			if (wasEmpty != _isEmpty)
 			{
-				 UpdateEmptyViewVisibility(_isEmpty);
+				UpdateEmptyViewVisibility(_isEmpty);
 			}
-			
+
 			if (wasEmpty && !_isEmpty)
 			{
 				// If we're going from empty to having stuff, it's possible that we've never actually measured
@@ -185,7 +185,7 @@ namespace Xamarin.Forms.Platform.iOS
 			LayoutEmptyView();
 		}
 
-		void ConstrainToItemsView() 
+		void ConstrainToItemsView()
 		{
 			var itemsViewWidth = ItemsView.Width;
 			var itemsViewHeight = ItemsView.Height;
@@ -330,7 +330,7 @@ namespace Xamarin.Forms.Platform.iOS
 			CacheCellAttributes(args.NewAttributes.IndexPath, args.NewAttributes.Size);
 		}
 
-		protected virtual void CacheCellAttributes(NSIndexPath indexPath, CGSize size) 
+		protected virtual void CacheCellAttributes(NSIndexPath indexPath, CGSize size)
 		{
 			if (!ItemsSource.IsIndexPathValid(indexPath))
 			{
@@ -397,7 +397,7 @@ namespace Xamarin.Forms.Platform.iOS
 
 		protected abstract bool IsHorizontal { get; }
 
-		protected virtual CGRect DetermineEmptyViewFrame() 
+		protected virtual CGRect DetermineEmptyViewFrame()
 		{
 			return new CGRect(CollectionView.Frame.X, CollectionView.Frame.Y,
 				CollectionView.Frame.Width, CollectionView.Frame.Height);
@@ -524,7 +524,7 @@ namespace Xamarin.Forms.Platform.iOS
 			_emptyUIView.Transform = CGAffineTransform.Scale(_emptyUIView.Transform, -1, 1);
 		}
 
-		void ShowEmptyView() 
+		void ShowEmptyView()
 		{
 			if (_emptyViewDisplayed || _emptyUIView == null)
 			{
@@ -545,7 +545,7 @@ namespace Xamarin.Forms.Platform.iOS
 			_emptyViewDisplayed = true;
 		}
 
-		void HideEmptyView() 
+		void HideEmptyView()
 		{
 			if (!_emptyViewDisplayed || _emptyUIView == null)
 			{
@@ -557,13 +557,13 @@ namespace Xamarin.Forms.Platform.iOS
 			_emptyViewDisplayed = false;
 		}
 
-		void TearDownEmptyView() 
+		void TearDownEmptyView()
 		{
 			HideEmptyView();
 
 			// RemoveLogicalChild will trigger a disposal of the native view and its content
 			ItemsView.RemoveLogicalChild(_emptyViewFormsElement);
-			
+
 			_emptyUIView = null;
 			_emptyViewFormsElement = null;
 		}
@@ -591,11 +591,11 @@ namespace Xamarin.Forms.Platform.iOS
 			{
 				return new HorizontalCell(frame);
 			}
-			
+
 			return new VerticalCell(frame);
 		}
 
-		public UICollectionViewCell CreateMeasurementCell(NSIndexPath indexPath) 
+		public UICollectionViewCell CreateMeasurementCell(NSIndexPath indexPath)
 		{
 			if (ItemsView.ItemTemplate == null)
 			{
@@ -610,13 +610,13 @@ namespace Xamarin.Forms.Platform.iOS
 				{
 					cell = new VerticalDefaultCell(frame);
 				}
-				
+
 				UpdateDefaultCell(cell, indexPath);
 				return cell;
 			}
 
-			TemplatedCell templatedCell = CreateAppropriateCellForLayout(); 
-						
+			TemplatedCell templatedCell = CreateAppropriateCellForLayout();
+
 			UpdateTemplatedCell(templatedCell, indexPath);
 
 			// Keep this cell around, we can transfer the contents to the actual cell when the UICollectionView creates it
@@ -626,7 +626,7 @@ namespace Xamarin.Forms.Platform.iOS
 			return templatedCell;
 		}
 
-		internal CGSize GetSizeForItem(NSIndexPath indexPath) 
+		internal CGSize GetSizeForItem(NSIndexPath indexPath)
 		{
 			if (ItemsViewLayout.EstimatedItemSize.IsEmpty)
 			{
@@ -645,8 +645,8 @@ namespace Xamarin.Forms.Platform.iOS
 
 			return ItemsViewLayout.EstimatedItemSize;
 		}
-		
-		internal protected virtual void UpdateVisibility() 
+
+		internal protected virtual void UpdateVisibility()
 		{
 			if (ItemsView.IsVisible)
 			{

@@ -120,7 +120,7 @@ namespace Xamarin.Forms.Platform.MacOS
 				var eventTracker = weakEventTracker.Target as EventTracker;
 				var view = eventTracker?._renderer?.Element as View;
 				var childGestures = GetChildGestures(sender, weakEventTracker, weakRecognizer, eventTracker, view);
-				
+
 				if (childGestures?.GetChildGesturesFor<TapGestureRecognizer>(x => x.NumberOfTapsRequired == (int)sender.NumberOfClicksRequired).Count() > 0)
 					return;
 
@@ -155,7 +155,7 @@ namespace Xamarin.Forms.Platform.MacOS
 				var eventTracker = weakEventTracker.Target as EventTracker;
 				var view = eventTracker?._renderer?.Element as View;
 				var childGestures = GetChildGestures(sender, weakEventTracker, weakRecognizer, eventTracker, view);
-				
+
 				var clickGestureRecognizer = ((ChildGestureRecognizer)weakRecognizer.Target).GestureRecognizer as ClickGestureRecognizer;
 				var recognizers = childGestures?.GetChildGesturesFor<ClickGestureRecognizer>(x => x.NumberOfClicksRequired == (int)sender.NumberOfClicksRequired);
 
@@ -186,7 +186,7 @@ namespace Xamarin.Forms.Platform.MacOS
 						handled = true;
 					}
 				}
-						
+
 				return handled;
 			});
 		}

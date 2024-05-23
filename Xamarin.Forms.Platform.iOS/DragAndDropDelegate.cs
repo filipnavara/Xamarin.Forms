@@ -267,4 +267,3 @@ namespace Xamarin.Forms.Platform.iOS
 
 }
 #endif
-	  

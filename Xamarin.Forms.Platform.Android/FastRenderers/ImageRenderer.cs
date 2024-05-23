@@ -8,8 +8,8 @@ using AndroidX.Core.View;
 using Xamarin.Forms.Internals;
 using static Android.Views.View;
 using AImageView = Android.Widget.ImageView;
-using AView = Android.Views.View;
 using ALayoutChangeEventArgs = Android.Views.View.LayoutChangeEventArgs;
+using AView = Android.Views.View;
 
 namespace Xamarin.Forms.Platform.Android.FastRenderers
 {
