@@ -83,12 +83,12 @@ namespace Xamarin.Forms.Platform.iOS
 
 		IReadOnlyList<Page> INavigation.ModalStack
 		{
-			get 
+			get
 			{
 				if (_disposed)
 					return new List<Page>();
 
-				return _modals; 
+				return _modals;
 			}
 		}
 
@@ -331,9 +331,9 @@ namespace Xamarin.Forms.Platform.iOS
 			_renderer.View.ContentMode = UIViewContentMode.Redraw;
 
 #pragma warning disable CS0618 // Type or member is obsolete
-				// The Platform property is no longer necessary, but we have to set it because some third-party
-				// library might still be retrieving it and using it
-				Page.Platform = this;
+			// The Platform property is no longer necessary, but we have to set it because some third-party
+			// library might still be retrieving it and using it
+			Page.Platform = this;
 #pragma warning restore CS0618 // Type or member is obsolete
 
 			AddChild(Page);
@@ -485,7 +485,7 @@ namespace Xamarin.Forms.Platform.iOS
 				alert.PopoverPresentationController.PermittedArrowDirections = 0; // No arrow
 			}
 
-			if(!Forms.IsiOS9OrNewer)
+			if (!Forms.IsiOS9OrNewer)
 			{
 				// For iOS 8, we need to explicitly set the size of the window
 				window.Frame = new RectangleF(0, 0, UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height);
@@ -548,7 +548,7 @@ namespace Xamarin.Forms.Platform.iOS
 		{
 			public override UIView HitTest(CGPoint point, UIEvent uievent)
 			{
-				if (!UserInteractionEnabled) 
+				if (!UserInteractionEnabled)
 				{
 					// This view can't interact, and neither can its children
 					return null;
@@ -590,7 +590,7 @@ namespace Xamarin.Forms.Platform.iOS
 
 		internal static string ResolveMsAppDataUri(Uri uri)
 		{
-			if(uri.Scheme == "ms-appdata")
+			if (uri.Scheme == "ms-appdata")
 			{
 				string filePath = string.Empty;
 
@@ -615,7 +615,7 @@ namespace Xamarin.Forms.Platform.iOS
 				throw new ArgumentException("uri");
 			}
 		}
-    
+
 		#region Obsolete 
 
 		SizeRequest IPlatform.GetNativeSize(VisualElement view, double widthConstraint, double heightConstraint)
@@ -637,7 +637,7 @@ namespace Xamarin.Forms.Platform.iOS
 			});
 
 			MessagingCenter.Subscribe(this, Page.AlertSignalName, (Page sender, AlertArguments arguments) =>
-			{	
+			{
 				if (!PageIsChildOfPlatform(sender))
 					return;
 				PresentAlert(arguments);

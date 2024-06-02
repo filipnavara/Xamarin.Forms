@@ -1,13 +1,12 @@
 using System;
 using System.ComponentModel;
-
 using System.Drawing;
 using CoreGraphics;
 using Foundation;
 using UIKit;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
-using Specifics = Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry;
 using RectangleF = CoreGraphics.CGRect;
+using Specifics = Xamarin.Forms.PlatformConfiguration.iOSSpecific.Entry;
 
 namespace Xamarin.Forms.Platform.iOS
 {
@@ -569,7 +568,7 @@ namespace Xamarin.Forms.Platform.iOS
 			{
 				clearButton.TintColor = Element.TextColor.ToUIColor();
 
-				if(_defaultClearImage == null)
+				if (_defaultClearImage == null)
 					_defaultClearImage = clearButton.ImageForState(UIControlState.Highlighted);
 
 				if (Element.TextColor == Color.Default)

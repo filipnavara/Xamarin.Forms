@@ -33,26 +33,26 @@ namespace Xamarin.Forms.Platform.iOS
 
 			UpdateBackground(tvc, item);
 
-			SetAccessibility (tvc, item);
+			SetAccessibility(tvc, item);
 
 			Performance.Stop(reference);
 			return tvc;
 		}
 
-		public virtual void SetAccessibility (UITableViewCell tableViewCell, Cell cell)
+		public virtual void SetAccessibility(UITableViewCell tableViewCell, Cell cell)
 		{
-			if (cell.IsSet (AutomationProperties.IsInAccessibleTreeProperty))
-				tableViewCell.IsAccessibilityElement = cell.GetValue (AutomationProperties.IsInAccessibleTreeProperty).Equals (true);
+			if (cell.IsSet(AutomationProperties.IsInAccessibleTreeProperty))
+				tableViewCell.IsAccessibilityElement = cell.GetValue(AutomationProperties.IsInAccessibleTreeProperty).Equals(true);
 			else
 				tableViewCell.IsAccessibilityElement = false;
 
-			if (cell.IsSet (AutomationProperties.NameProperty))
-				tableViewCell.AccessibilityLabel = cell.GetValue (AutomationProperties.NameProperty).ToString ();
+			if (cell.IsSet(AutomationProperties.NameProperty))
+				tableViewCell.AccessibilityLabel = cell.GetValue(AutomationProperties.NameProperty).ToString();
 			else
 				tableViewCell.AccessibilityLabel = null;
 
-			if (cell.IsSet (AutomationProperties.HelpTextProperty))
-				tableViewCell.AccessibilityHint = cell.GetValue (AutomationProperties.HelpTextProperty).ToString ();
+			if (cell.IsSet(AutomationProperties.HelpTextProperty))
+				tableViewCell.AccessibilityHint = cell.GetValue(AutomationProperties.HelpTextProperty).ToString();
 			else
 				tableViewCell.AccessibilityHint = null;
 		}
@@ -113,9 +113,9 @@ namespace Xamarin.Forms.Platform.iOS
 
 			_onPropertyChangedEventHandler = (sender, e) =>
 			{
-				if(e.PropertyName == "RealCell" && sender is BindableObject bo && GetRealCell(bo) == null)
+				if (e.PropertyName == "RealCell" && sender is BindableObject bo && GetRealCell(bo) == null)
 				{
-					if(sender is ICellController icc)
+					if (sender is ICellController icc)
 						icc.ForceUpdateSizeRequested -= _onForceUpdateSizeRequested;
 
 					if (sender is INotifyPropertyChanged notifyPropertyChanged)

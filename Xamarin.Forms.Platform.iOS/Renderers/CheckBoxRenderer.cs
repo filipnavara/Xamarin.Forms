@@ -11,10 +11,10 @@ namespace Xamarin.Forms.Platform.iOS
 		}
 
 
-        protected override FormsCheckBox CreateNativeControl()
-        {
-            return new FormsCheckBox();
-        }
+		protected override FormsCheckBox CreateNativeControl()
+		{
+			return new FormsCheckBox();
+		}
 
-    }
+	}
 }

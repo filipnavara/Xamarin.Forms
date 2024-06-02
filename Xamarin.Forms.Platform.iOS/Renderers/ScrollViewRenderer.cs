@@ -1,11 +1,11 @@
 using System;
 using System.ComponentModel;
-using Xamarin.Forms.Internals;
+using CoreGraphics;
 using UIKit;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using PointF = CoreGraphics.CGPoint;
 using RectangleF = CoreGraphics.CGRect;
-using CoreGraphics;
 
 namespace Xamarin.Forms.Platform.iOS
 {
@@ -79,7 +79,7 @@ namespace Xamarin.Forms.Platform.iOS
 					_insetTracker = new KeyboardInsetTracker(this, () => Window, insets =>
 					{
 						ContentInset = ScrollIndicatorInsets = insets;
-					}, 
+					},
 					point =>
 					{
 						var offset = ContentOffset;
@@ -117,13 +117,13 @@ namespace Xamarin.Forms.Platform.iOS
 		{
 			get { return null; }
 		}
-				
+
 		public override void LayoutSubviews()
 		{
 			_insetTracker?.OnLayoutSubviews();
 			base.LayoutSubviews();
 
-			if(Superview != null && ScrollView != null)
+			if (Superview != null && ScrollView != null)
 			{
 				if (_requestedScroll != null)
 				{
@@ -194,7 +194,7 @@ namespace Xamarin.Forms.Platform.iOS
 			base.Dispose(disposing);
 		}
 
-		protected virtual void OnElementChanged(VisualElementChangedEventArgs e) => ElementChanged?.Invoke(this, e); 
+		protected virtual void OnElementChanged(VisualElementChangedEventArgs e) => ElementChanged?.Invoke(this, e);
 
 		void HandlePropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
@@ -227,15 +227,15 @@ namespace Xamarin.Forms.Platform.iOS
 		void UpdateVerticalScrollBarVisibility()
 		{
 			var verticalScrollBarVisibility = ScrollView.VerticalScrollBarVisibility;
-			ShowsVerticalScrollIndicator = verticalScrollBarVisibility == ScrollBarVisibility.Always 
-			                               || verticalScrollBarVisibility == ScrollBarVisibility.Default;
+			ShowsVerticalScrollIndicator = verticalScrollBarVisibility == ScrollBarVisibility.Always
+										   || verticalScrollBarVisibility == ScrollBarVisibility.Default;
 		}
 
 		void UpdateHorizontalScrollBarVisibility()
 		{
 			var horizontalScrollBarVisibility = ScrollView.HorizontalScrollBarVisibility;
 			ShowsHorizontalScrollIndicator = horizontalScrollBarVisibility == ScrollBarVisibility.Always
-			                               || horizontalScrollBarVisibility == ScrollBarVisibility.Default;
+										   || horizontalScrollBarVisibility == ScrollBarVisibility.Default;
 		}
 
 		void HandleScrollAnimationEnded(object sender, EventArgs e)
@@ -286,7 +286,7 @@ namespace Xamarin.Forms.Platform.iOS
 						break;
 				}
 			}
-			if(newOffset.X + ScrollView.Width > ContentSize.Width)
+			if (newOffset.X + ScrollView.Width > ContentSize.Width)
 				newOffset.X = (nfloat)(ContentSize.Width - ScrollView.Width);
 			if (newOffset.Y + ScrollView.Height > ContentSize.Height)
 				newOffset.Y = (nfloat)(ContentSize.Height - ScrollView.Height);

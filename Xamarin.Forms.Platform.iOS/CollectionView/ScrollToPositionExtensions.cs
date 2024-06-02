@@ -4,7 +4,7 @@ namespace Xamarin.Forms.Platform.iOS
 {
 	public static class ScrollToPositionExtensions
 	{
-		public static UICollectionViewScrollPosition ToCollectionViewScrollPosition(this ScrollToPosition scrollToPosition, 
+		public static UICollectionViewScrollPosition ToCollectionViewScrollPosition(this ScrollToPosition scrollToPosition,
 			UICollectionViewScrollDirection scrollDirection = UICollectionViewScrollDirection.Vertical, bool isLtr = false)
 		{
 			if (scrollDirection == UICollectionViewScrollDirection.Horizontal)

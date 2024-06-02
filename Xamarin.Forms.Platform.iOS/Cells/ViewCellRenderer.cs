@@ -218,7 +218,7 @@ namespace Xamarin.Forms.Platform.iOS
 				SetNeedsLayout();
 			}
 
-			
+
 		}
 	}
 }

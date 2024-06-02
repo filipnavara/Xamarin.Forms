@@ -1,11 +1,11 @@
-﻿using CoreGraphics;
-using Foundation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CoreGraphics;
+using Foundation;
 using UIKit;
 
 namespace Xamarin.Forms.Platform.iOS
@@ -154,7 +154,7 @@ namespace Xamarin.Forms.Platform.iOS
 				if (oldPage == null)
 					((IShellController)_context.Shell).AddFlyoutBehaviorObserver(this);
 			}
-			else if(newPage == null && _context?.Shell is IShellController shellController)
+			else if (newPage == null && _context?.Shell is IShellController shellController)
 			{
 				shellController.RemoveFlyoutBehaviorObserver(this);
 			}
@@ -238,7 +238,7 @@ namespace Xamarin.Forms.Platform.iOS
 			var command = behavior.GetPropertyIfSet<object>(BackButtonBehavior.CommandProperty, null);
 
 			UIImage icon = null;
-			
+
 			if (String.IsNullOrWhiteSpace(text) && image == null)
 			{
 				image = _context.Shell.FlyoutIcon;
@@ -308,7 +308,7 @@ namespace Xamarin.Forms.Platform.iOS
 				else if (controller?.ParentViewController is UINavigationController navigationController)
 					navigationController.PopViewController(true);
 			}
-			else if(_flyoutBehavior == FlyoutBehavior.Flyout)
+			else if (_flyoutBehavior == FlyoutBehavior.Flyout)
 			{
 				_context.Shell.SetValueFromRenderer(Shell.FlyoutIsPresentedProperty, true);
 			}

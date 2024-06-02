@@ -73,12 +73,12 @@ namespace Xamarin.Forms.Platform.iOS
 		{
 			var textAttr = TextView.AttributedText.AddCharacterSpacing(Element.Text, Element.CharacterSpacing);
 
-			if(textAttr != null)
+			if (textAttr != null)
 				TextView.AttributedText = textAttr;
 
 			var placeHolder = _placeholderLabel.AttributedText.AddCharacterSpacing(Element.Placeholder, Element.CharacterSpacing);
 
-			if(placeHolder != null)
+			if (placeHolder != null)
 				_placeholderLabel.AttributedText = placeHolder;
 		}
 
@@ -149,7 +149,7 @@ namespace Xamarin.Forms.Platform.iOS
 					TextView.Started -= OnStarted;
 					TextView.Ended -= OnEnded;
 					TextView.ShouldChangeText -= ShouldChangeText;
-					if(Control is IFormsUITextView formsUITextView)
+					if (Control is IFormsUITextView formsUITextView)
 						formsUITextView.FrameChanged -= OnFrameChanged;
 				}
 			}
@@ -280,12 +280,12 @@ namespace Xamarin.Forms.Platform.iOS
 			// Typing aid changes don't always raise EditingChanged event
 			// Normalizing nulls to string.Empty allows us to ensure that a change from null to "" doesn't result in a change event.
 			// While technically this is a difference it serves no functional good.
-			
+
 			var textViewText = TextView.Text ?? string.Empty;
 			var editorText = Element.Text ?? string.Empty;
-			
+
 			if (textViewText != editorText)
-				ElementController.SetValueFromRenderer(Editor.TextProperty, textViewText);			
+				ElementController.SetValueFromRenderer(Editor.TextProperty, textViewText);
 
 			Element.SetValue(VisualElement.IsFocusedPropertyKey, false);
 			ElementController.SendCompleted();

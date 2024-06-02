@@ -1,6 +1,6 @@
 using System;
-using System.Drawing;
 using System.ComponentModel;
+using System.Drawing;
 using UIKit;
 using RectangleF = CoreGraphics.CGRect;
 
@@ -9,7 +9,7 @@ namespace Xamarin.Forms.Platform.iOS
 	public class StepperRenderer : ViewRenderer<Stepper, UIStepper>
 	{
 		bool _disposed;
-	
+
 		[Internals.Preserve(Conditional = true)]
 		public StepperRenderer()
 		{
@@ -24,7 +24,7 @@ namespace Xamarin.Forms.Platform.iOS
 
 			_disposed = true;
 
-			if(disposing)
+			if (disposing)
 			{
 				if (Control != null)
 					Control.ValueChanged -= OnValueChanged;

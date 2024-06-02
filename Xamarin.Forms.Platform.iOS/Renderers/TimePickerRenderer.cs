@@ -225,7 +225,7 @@ namespace Xamarin.Forms.Platform.iOS
 							  .Where(c => c.Name.EndsWith("-" + iOSLocale)).FirstOrDefault();
 			if (cultureInfos == null)
 				cultureInfos = CultureInfo.InvariantCulture;
-			
+
 			if (String.IsNullOrEmpty(Element.Format))
 			{
 				string timeformat = cultureInfos.DateTimeFormat.ShortTimePattern;

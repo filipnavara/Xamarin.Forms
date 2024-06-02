@@ -269,7 +269,7 @@ namespace Xamarin.Forms.Platform.iOS
 		{
 			if (_ignoreNativeScrolling || SelectedIndex >= ElementController.LogicalChildren.Count)
 				return;
-						
+
 			var currentPage = (ContentPage)ElementController.LogicalChildren[SelectedIndex];
 			if (_previousPage != currentPage)
 			{

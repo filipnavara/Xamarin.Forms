@@ -4,8 +4,8 @@ using System.ComponentModel;
 using Foundation;
 using UIKit;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
-using PageUIStatusBarAnimation = Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIStatusBarAnimation;
 using PageSpecific = Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page;
+using PageUIStatusBarAnimation = Xamarin.Forms.PlatformConfiguration.iOSSpecific.UIStatusBarAnimation;
 
 namespace Xamarin.Forms.Platform.iOS
 {

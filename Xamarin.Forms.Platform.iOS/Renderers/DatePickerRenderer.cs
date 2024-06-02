@@ -166,7 +166,7 @@ namespace Xamarin.Forms.Platform.iOS
 		{
 			if (_picker.Date.ToDateTime().Date != Element.Date.Date)
 				_picker.SetDate(Element.Date.ToNSDate(), animate);
-						
+
 			if (string.IsNullOrWhiteSpace(Element.Format))
 			{
 				Control.Text = Element.Date.ToShortDateString();

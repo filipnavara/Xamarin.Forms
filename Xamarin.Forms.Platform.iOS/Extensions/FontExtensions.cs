@@ -1,9 +1,9 @@
+using System;
 using System.Diagnostics;
 using System.Linq;
-using Xamarin.Forms.Internals;
 using UIKit;
-using System;
 using Xamarin.Forms.Core;
+using Xamarin.Forms.Internals;
 
 namespace Xamarin.Forms.Platform.iOS
 {
@@ -59,7 +59,7 @@ namespace Xamarin.Forms.Platform.iOS
 						result = UIFont.SystemFontOfSize(size, UIFontWeight.Regular);
 						return result;
 					}
-					if(result == null)
+					if (result == null)
 						result = UIFont.FromName(family, size);
 					if (result != null)
 						return result;

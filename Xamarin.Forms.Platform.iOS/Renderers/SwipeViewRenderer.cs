@@ -1055,7 +1055,7 @@ namespace Xamarin.Forms.Platform.iOS
 			_swipeItems.Clear();
 			_swipeThreshold = 0;
 			_swipeOffset = 0;
-	
+
 			if (_actionView != null)
 			{
 				_actionView.RemoveFromSuperview();

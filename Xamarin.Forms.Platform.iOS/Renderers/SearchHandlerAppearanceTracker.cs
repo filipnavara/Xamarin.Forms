@@ -33,7 +33,7 @@ namespace Xamarin.Forms.Platform.iOS
 			_uiSearchBar.ShowsCancelButton = false;
 			GetDefaultSearchBarColors(_uiSearchBar);
 			var uiTextField = searchBar.FindDescendantView<UITextField>();
-			
+
 			UpdateSearchBarColors();
 			UpdateSearchBarHorizontalTextAlignment(uiTextField);
 			UpdateSearchBarVerticalTextAlignment(uiTextField);
@@ -136,14 +136,14 @@ namespace Xamarin.Forms.Platform.iOS
 			if (!_hasCustomBackground && backGroundColor.IsDefault)
 				return;
 
-			if(Forms.IsiOS13OrNewer)
+			if (Forms.IsiOS13OrNewer)
 			{
 				textField.BackgroundColor = backGroundColor.ToUIColor();
 			}
 			else
-			{ 
+			{
 				var backgroundView = textField.Subviews[0];
-			
+
 
 				if (backGroundColor.IsDefault)
 				{

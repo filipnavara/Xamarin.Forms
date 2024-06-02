@@ -13,13 +13,13 @@ namespace Xamarin.Forms.Platform.iOS
 		[Export("initWithFrame:")]
 		[Internals.Preserve(Conditional = true)]
 		protected CarouselTemplatedCell(CGRect frame) : base(frame)
-		{ 
+		{
 		}
 
 		public override void ConstrainTo(nfloat constant)
 		{
 		}
-		
+
 		public override void ConstrainTo(CGSize constraint)
 		{
 			ClearConstraints();

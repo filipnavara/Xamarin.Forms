@@ -131,13 +131,13 @@ namespace Xamarin.Forms.Platform.iOS
 				UpdateVerticalTextAlignment();
 			else if (e.PropertyName == VisualElement.FlowDirectionProperty.PropertyName)
 				UpdateHorizontalTextAlignment();
-			else if(e.PropertyName == Xamarin.Forms.InputView.MaxLengthProperty.PropertyName)
+			else if (e.PropertyName == Xamarin.Forms.InputView.MaxLengthProperty.PropertyName)
 				UpdateMaxLength();
-			else if(e.PropertyName == Xamarin.Forms.InputView.KeyboardProperty.PropertyName)
+			else if (e.PropertyName == Xamarin.Forms.InputView.KeyboardProperty.PropertyName)
 				UpdateKeyboard();
-			else if(e.PropertyName == Xamarin.Forms.InputView.IsSpellCheckEnabledProperty.PropertyName)
+			else if (e.PropertyName == Xamarin.Forms.InputView.IsSpellCheckEnabledProperty.PropertyName)
 				UpdateKeyboard();
-			else if(e.PropertyName == PlatformConfiguration.iOSSpecific.SearchBar.SearchBarStyleProperty.PropertyName)
+			else if (e.PropertyName == PlatformConfiguration.iOSSpecific.SearchBar.SearchBarStyleProperty.PropertyName)
 				UpdateSearchBarStyle();
 		}
 
@@ -152,7 +152,7 @@ namespace Xamarin.Forms.Platform.iOS
 			{
 				_defaultTintColor = Control.BarTintColor;
 			}
-			
+
 			Control.BarTintColor = color.ToUIColor(_defaultTintColor);
 
 			Control.SetBackgroundImage(new UIImage(), UIBarPosition.Any, UIBarMetrics.Default);
@@ -318,7 +318,7 @@ namespace Xamarin.Forms.Platform.iOS
 				// Placeholder default color is 70% gray
 				// https://developer.apple.com/library/prerelease/ios/documentation/UIKit/Reference/UITextField_Class/index.html#//apple_ref/occ/instp/UITextField/placeholder
 
-				var color = Element.IsEnabled && !targetColor.IsDefault 
+				var color = Element.IsEnabled && !targetColor.IsDefault
 					? targetColor : ColorExtensions.PlaceholderColor.ToColor();
 
 				_textField.AttributedPlaceholder = formatted.ToAttributed(Element, color);
@@ -327,7 +327,7 @@ namespace Xamarin.Forms.Platform.iOS
 			}
 			else
 			{
-				_textField.AttributedPlaceholder = formatted.ToAttributed(Element, targetColor.IsDefault 
+				_textField.AttributedPlaceholder = formatted.ToAttributed(Element, targetColor.IsDefault
 					? ColorExtensions.PlaceholderColor.ToColor() : targetColor);
 				_textField.AttributedPlaceholder.AddCharacterSpacing(Element.Placeholder, Element.CharacterSpacing);
 			}
@@ -343,7 +343,7 @@ namespace Xamarin.Forms.Platform.iOS
 			// other changes to Element.Text.
 			if (!_textWasTyped)
 				Control.Text = Element.UpdateFormsText(Element.Text, Element.TextTransform);
-			
+
 			UpdateCancelButton();
 		}
 

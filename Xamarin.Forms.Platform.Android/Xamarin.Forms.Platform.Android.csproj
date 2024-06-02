@@ -8,6 +8,10 @@
     <RootNamespace>Xamarin.Forms.Platform.Android</RootNamespace>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0-android'">
+    <SupportedOSPlatformVersion>23.0</SupportedOSPlatformVersion>
+    <WarningsNotAsErrors>CA1416;CA1422;CS0809</WarningsNotAsErrors>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)'=='Debug' ">
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>

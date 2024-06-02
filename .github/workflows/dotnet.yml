@@ -3,37 +3,46 @@ name: Build and publish
 on:
   push:
     branches:
-    - 'net7'
-    - 'net7-*'
+    - 'net8'
+    - 'net8-*'
   pull_request:
     branches:
-    - 'net7'
-    - 'net7-*'
+    - 'net8'
+    - 'net8-*'
 
 jobs:
   build:
-    runs-on: macos-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
+    - name: Setup Java
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'microsoft'
+        java-version: '11'
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 7.0.x
-    - name: Install iOS workload
-      run: dotnet workload install ios -s https://api.nuget.org/v3/index.json
+        dotnet-version: 8.0.x
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v2
+    - name: Install iOS and Android workload
+      run: dotnet workload install ios android -s https://api.nuget.org/v3/index.json
     - name: Install older NuGet.exe
       run: |
         curl https://dist.nuget.org/win-x86-commandline/v5.8.1/nuget.exe --output nuget.exe
         chmod +x nuget.exe
     - name: Build
-      run: msbuild Xamarin.Forms.sln /p:Configuration=Release /p:BUILDVERSION="${GITHUB_RUN_NUMBER}" /p:BUILD_BUILDID="${GITHUB_RUN_NUMBER}" /restore
-    - name: Build (.NET 7 / iOS)
-      run: dotnet build Xamarin.Forms.Platform.iOS /p:Configuration=Release /p:Net7Build=true /p:BUILDVERSION="${GITHUB_RUN_NUMBER}" /p:BUILD_BUILDID="${GITHUB_RUN_NUMBER}" /p:_SdkIgnoreMSBuildCoreWarning=true /p:_ExtrasSkipTargetsCheck=true /restore
+      run: msbuild Xamarin.Forms.sln /p:Configuration=Release /p:BUILDVERSION="${env:GITHUB_RUN_NUMBER}" /p:BUILD_BUILDID="${env:GITHUB_RUN_NUMBER}" /restore
+    - name: Build (.NET 8 / iOS)
+      run: dotnet build Xamarin.Forms.Platform.iOS /p:Configuration=Release /p:Net8Build=true /p:BUILDVERSION="${env:GITHUB_RUN_NUMBER}" /p:BUILD_BUILDID="${env:GITHUB_RUN_NUMBER}" /p:_SdkIgnoreMSBuildCoreWarning=true /p:_ExtrasSkipTargetsCheck=true /restore
     - name: Pack
       run: |
-        mono nuget.exe pack .nuspec/Xamarin.Forms.nuspec -Properties "Version=$(< .XamarinFormsVersionFile.txt);Configuration=Release"
+        $version = Get-Content -Path .XamarinFormsVersionFile.txt
+        nuget.exe pack .nuspec/Xamarin.Forms.nuspec -Properties "Version=${version};Configuration=Release"
+      shell: pwsh
     - uses: actions/upload-artifact@master
       with:
         name: build-artifacts
@@ -44,12 +53,12 @@ jobs:
       packages: write
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/net7'
+    if: github.ref == 'refs/heads/net8'
     steps:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 7.0.x
+        dotnet-version: 8.0.x
         include-prerelease: true
     - uses: actions/download-artifact@master
       with:

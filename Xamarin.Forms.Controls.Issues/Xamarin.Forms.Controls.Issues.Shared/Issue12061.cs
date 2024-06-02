@@ -1,5 +1,5 @@
-﻿using Xamarin.Forms.Internals;
-using Xamarin.Forms.CustomAttributes;
+﻿using Xamarin.Forms.CustomAttributes;
+using Xamarin.Forms.Internals;
 
 #if UITEST
 using Xamarin.UITest;
@@ -32,7 +32,7 @@ namespace Xamarin.Forms.Controls.Issues
 			{
 				Padding = 12,
 				BackgroundColor = Color.Black,
-				TextColor  = Color.White,
+				TextColor = Color.White,
 				Text = "Tap the Button. The BoxView must be updated with ConerRadius but without losing the Color. If the BoxView Color is kept, the test has passed."
 			};
 

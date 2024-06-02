@@ -15,10 +15,10 @@ namespace Xamarin.Forms.Platform.MacOS
 	public static class FormattedStringExtensions
 	{
 		public static NSAttributedString ToAttributed(this Span span, Font defaultFont, Color defaultForegroundColor)
-		{ 
+		{
 			if (span == null)
 				return null;
-	
+
 #pragma warning disable 0618 //retaining legacy call to obsolete code
 			var font = span.Font != Font.Default ? span.Font : defaultFont;
 #pragma warning restore 0618
@@ -54,7 +54,7 @@ namespace Xamarin.Forms.Platform.MacOS
 
 			return attributed;
 		}
-		
+
 		internal static NSAttributedString ToAttributed(this Span span, BindableObject owner, Color defaultForegroundColor, TextAlignment textAlignment, double lineHeight = -1.0)
 		{
 			if (span == null)

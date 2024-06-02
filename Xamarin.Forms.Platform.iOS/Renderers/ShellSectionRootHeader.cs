@@ -1,8 +1,8 @@
-﻿using CoreGraphics;
-using Foundation;
-using System;
+﻿using System;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using CoreGraphics;
+using Foundation;
 using UIKit;
 
 namespace Xamarin.Forms.Platform.iOS
@@ -115,7 +115,7 @@ namespace Xamarin.Forms.Platform.iOS
 
 		public override void ItemDeselected(UICollectionView collectionView, NSIndexPath indexPath)
 		{
-			if(CollectionView.CellForItem(indexPath) is ShellSectionHeaderCell cell)
+			if (CollectionView.CellForItem(indexPath) is ShellSectionHeaderCell cell)
 				cell.Label.TextColor = _unselectedColor.ToUIColor();
 		}
 

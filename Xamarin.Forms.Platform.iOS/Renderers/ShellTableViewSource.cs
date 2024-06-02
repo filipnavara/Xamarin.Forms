@@ -1,6 +1,6 @@
-﻿using Foundation;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Foundation;
 using UIKit;
 using Xamarin.Forms.Internals;
 
@@ -66,10 +66,10 @@ namespace Xamarin.Forms.Platform.iOS
 
 			foreach (var group in newGroups)
 			{
-				foreach(var element in group)
+				foreach (var element in group)
 				{
 					UIContainerCell result;
-					if(oldList.TryGetValue(element, out result))
+					if (oldList.TryGetValue(element, out result))
 					{
 						_cells.Add(element, result);
 						oldList.Remove(element);
@@ -86,7 +86,7 @@ namespace Xamarin.Forms.Platform.iOS
 		{
 			var newGroups = ((IShellController)_context.Shell).GenerateFlyoutGrouping();
 
-			if(newGroups != _groups)
+			if (newGroups != _groups)
 			{
 				_groups = newGroups;
 				if (_cells != null)

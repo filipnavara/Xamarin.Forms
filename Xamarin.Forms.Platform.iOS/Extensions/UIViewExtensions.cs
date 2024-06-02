@@ -143,7 +143,7 @@ namespace Xamarin.Forms.Platform.MacOS
 						System.Diagnostics.Debug.WriteLine("KVO not supported, try specify a UpdateSourceEventName instead.");
 						return;
 					}
-					throw ex;
+					throw;
 				}
 #else
 				catch (Exception ex)

@@ -23,6 +23,9 @@ using Xamarin.Forms.Platform.Android;
 using AColor = Android.Graphics.Color;
 using Resource = Android.Resource;
 using Trace = System.Diagnostics.Trace;
+#if NET7_0_OR_GREATER
+using System.Runtime.Versioning;
+#endif
 
 namespace Xamarin.Forms
 {
@@ -86,6 +89,9 @@ namespace Xamarin.Forms
 			}
 		}
 
+#if NET7_0_OR_GREATER
+		[SupportedOSPlatformGuard("android29.0")]
+#endif
 		internal static bool Is29OrNewer
 		{
 			get
@@ -96,6 +102,9 @@ namespace Xamarin.Forms
 			}
 		}
 
+#if NET7_0_OR_GREATER
+		[SupportedOSPlatformGuard("android17.0")]
+#endif
 		internal static bool IsJellyBeanMr1OrNewer
 		{
 			get
@@ -106,6 +115,9 @@ namespace Xamarin.Forms
 			}
 		}
 
+#if NET7_0_OR_GREATER
+		[SupportedOSPlatformGuard("android22.0")]
+#endif
 		internal static bool IsLollipopOrNewer
 		{
 			get
@@ -116,6 +128,9 @@ namespace Xamarin.Forms
 			}
 		}
 
+#if NET7_0_OR_GREATER
+		[SupportedOSPlatformGuard("android23.0")]
+#endif
 		internal static bool IsMarshmallowOrNewer
 		{
 			get
@@ -126,6 +141,9 @@ namespace Xamarin.Forms
 			}
 		}
 
+#if NET7_0_OR_GREATER
+		[SupportedOSPlatformGuard("android24.0")]
+#endif
 		internal static bool IsNougatOrNewer
 		{
 			get
@@ -136,6 +154,9 @@ namespace Xamarin.Forms
 			}
 		}
 
+#if NET7_0_OR_GREATER
+		[SupportedOSPlatformGuard("android26.0")]
+#endif
 		internal static bool IsOreoOrNewer
 		{
 			get
@@ -146,6 +167,9 @@ namespace Xamarin.Forms
 			}
 		}
 
+#if NET7_0_OR_GREATER
+		[SupportedOSPlatformGuard("android28.0")]
+#endif
 		internal static bool IsPieOrNewer
 		{
 			get
